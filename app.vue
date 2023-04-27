@@ -101,14 +101,20 @@
           </li>
         </ul>
       </aside>
-      <div class="pl-20">
-        <section class="h-screen pt-20">
+      <div class="pl-20 pr-10">
+        <section class="h-screen pt-20 lg:mx-auto lg:w-10/12">
           <p class="text-lg text-primary">Hi, my name is</p>
-          <p class="mt-8 font-bold text-slate-400 text-7xl">Andres Posada.</p>
-          <p class="mt-5 mb-10 font-bold opacity-60 text-7xl text-cyan-300">
+          <p class="mt-8 text-6xl font-bold md:text-7xl text-slate-400">
+            Andres Posada.
+          </p>
+          <p
+            class="mt-5 mb-10 text-5xl font-bold opacity-60 md:text-7xl text-cyan-300"
+          >
             I build things for the web and mobile.
           </p>
-          <p class="w-11/12 text-xl opacity-60 text-slate-400">
+          <p
+            class="w-10/12 text-xl md:w-8/12 xl:w-6/12 opacity-60 text-slate-400"
+          >
             I'm a software engineer, I like building solutions with software,
             and I'm constantly learning about new technologies, programming, and
             how I can improve my skills.
