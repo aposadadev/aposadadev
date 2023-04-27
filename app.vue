@@ -14,7 +14,7 @@
     </header>
     <main>
       <aside
-        class="fixed top-0 bottom-0 flex items-end justify-center w-20 pb-36"
+        class="fixed top-0 bottom-0 items-end justify-center hidden w-20 md:flex pb-36"
       >
         <ul class="flex flex-col gap-10 text-slate-400">
           <li class="hover:text-primary">
@@ -101,19 +101,21 @@
           </li>
         </ul>
       </aside>
-      <div class="pl-20 pr-10">
-        <section class="h-screen pt-20 lg:mx-auto lg:w-10/12">
+      <div class="pb-20 pl-10 pr-10 md:pl-20">
+        <section
+          class="min-h-screen pt-5 md:pt-10 lg:pt-20 lg:mx-auto lg:w-10/12"
+        >
           <p class="text-lg text-primary">Hi, my name is</p>
           <p class="mt-8 text-6xl font-bold md:text-7xl text-slate-400">
             Andres Posada.
           </p>
           <p
-            class="mt-5 mb-10 text-5xl font-bold opacity-60 md:text-7xl text-cyan-300"
+            class="mt-5 mb-10 text-4xl font-bold sm:text-5xl opacity-60 md:text-7xl text-cyan-300"
           >
             I build things for the web and mobile.
           </p>
           <p
-            class="w-10/12 text-xl md:w-8/12 xl:w-6/12 opacity-60 text-slate-400"
+            class="w-full text-xl sm:w-10/12 md:w-8/12 xl:w-6/12 opacity-60 text-slate-400"
           >
             I'm a software engineer, I like building solutions with software,
             and I'm constantly learning about new technologies, programming, and
@@ -121,7 +123,7 @@
           </p>
           <div class="mt-20">
             <button
-              class="px-20 py-3 border rounded border-primary text-primary hover:bg-primary hover:text-dark"
+              class="w-full px-20 py-3 border rounded sm:w-auto border-primary text-primary hover:bg-primary hover:text-dark"
             >
               Resume
             </button>
