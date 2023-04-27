@@ -1,9 +1,9 @@
 <template>
-  <div class="dark:bg-dark">
+  <div class="bg-dark">
     <header class="h-20">
       <nav class="h-full pr-10">
         <ul
-          class="flex items-center justify-end h-full pr-20 text-slate-400 gap-x-10"
+          class="flex items-center justify-end h-full text-slate-400 gap-x-10"
         >
           <li class="hover:text-primary">About</li>
           <li class="hover:text-primary">Experience</li>
@@ -14,7 +14,7 @@
     </header>
     <main>
       <aside
-        class="fixed top-0 bottom-0 flex items-end justify-center w-32 pb-36"
+        class="fixed top-0 bottom-0 flex items-end justify-center w-20 pb-36"
       >
         <ul class="flex flex-col gap-10 text-slate-400">
           <li class="hover:text-primary">
@@ -101,19 +101,19 @@
           </li>
         </ul>
       </aside>
-      <div class="ml-32">
-        <section class="h-screen pt-40 ml-32">
+      <div class="pl-20">
+        <section class="h-screen pt-20">
           <p class="text-lg text-primary">Hi, my name is</p>
           <p class="mt-8 font-bold text-slate-400 text-7xl">Andres Posada.</p>
           <p class="mt-5 mb-10 font-bold opacity-60 text-7xl text-cyan-300">
             I build things for the web and mobile.
           </p>
-          <p class="w-5/12 text-xl opacity-60 text-slate-400">
+          <p class="w-11/12 text-xl opacity-60 text-slate-400">
             I'm a software engineer, I like building solutions with software,
             and I'm constantly learning about new technologies, programming, and
             how I can improve my skills.
           </p>
-          <div class="mt-32">
+          <div class="mt-20">
             <button
               class="px-20 py-3 border rounded border-primary text-primary hover:bg-primary hover:text-dark"
             >
