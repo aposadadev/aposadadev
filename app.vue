@@ -1,7 +1,12 @@
+<script lang="ts" setup>
+import { ref } from "vue";
+
+const showSidebar = ref(false);
+</script>
 <template>
   <div class="bg-dark">
-    <header class="h-20">
-      <nav class="h-full pr-10">
+    <header class="h-20 pr-5 md:pr-10">
+      <nav class="hidden h-full md:block">
         <ul
           class="flex items-center justify-end h-full text-slate-400 gap-x-10"
         >
@@ -11,6 +16,87 @@
           <li class="hover:text-primary">Contact</li>
         </ul>
       </nav>
+      <div class="flex items-center justify-end h-full md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8 text-slate-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+          />
+        </svg>
+        <div
+          class="relative z-10"
+          aria-labelledby="modal-title"
+          role="dialog"
+          aria-modal="true"
+        >
+          <!--
+    Background backdrop, show/hide based on modal state.
+
+    Entering: "ease-out duration-300"
+      From: "opacity-0"
+      To: "opacity-100"
+    Leaving: "ease-in duration-200"
+      From: "opacity-100"
+      To: "opacity-0"
+  -->
+          <div
+            class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-80"
+          ></div>
+
+          <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div
+              class="flex items-end justify-end min-h-full text-center sm:items-center sm:p-0"
+            >
+              <!--
+        Modal panel, show/hide based on modal state.
+
+        Entering: "ease-out duration-300"
+          From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          To: "opacity-100 translate-y-0 sm:scale-100"
+        Leaving: "ease-in duration-200"
+          From: "opacity-100 translate-y-0 sm:scale-100"
+          To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+      -->
+              <div class="w-8/12 h-screen bg-dark">
+                <div class="flex items-center justify-end w-full h-20 pr-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-8 h-8 text-slate-400"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <ul
+                    class="flex flex-col items-center justify-end h-full text-slate-400 gap-y-10"
+                  >
+                    <li class="hover:text-primary">About</li>
+                    <li class="hover:text-primary">Experience</li>
+                    <li class="hover:text-primary">Work</li>
+                    <li class="hover:text-primary">Contact</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <aside
