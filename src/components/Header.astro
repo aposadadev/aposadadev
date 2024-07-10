@@ -1,15 +1,22 @@
 ---
+const links = [
+  { name: "About", href: "#" },
+  { name: "Experience", href: "#" },
+  { name: "Work", href: "#" },
+  { name: "Contact", href: "#" },
+];
 ---
 
 <header class="h-20 pr-5 md:pr-10">
   <nav class="hidden h-full sm:block">
-    <ul
-      class="flex items-center justify-end h-full text-slate-400 gap-x-10"
-    >
-      <li class="hover:text-primary">About</li>
-      <li class="hover:text-primary">Experience</li>
-      <li class="hover:text-primary">Work</li>
-      <li class="hover:text-primary">Contact</li>
+    <ul class="flex items-center justify-end h-full text-slate-400 gap-x-10">
+      {
+        links.map((link) => (
+          <li class="hover:text-primary hover:text-white cursor-pointer">
+            {link.name}
+          </li>
+        ))
+      }
     </ul>
   </nav>
   <div class="flex items-center justify-end h-full">
@@ -19,31 +26,28 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-8 h-8 text-slate-400 sm:hidden"
-      @click="showSidebar = true"
+      class="w-8 h-8 text-slate-400 sm:hidden sidebarButton cursor-pointer"
     >
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
-        d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-      />
+        d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
     </svg>
     <div
-      v-show="showSidebar"
-      class="relative z-10 sm:hidden"
+      class="sidebar hidden z-10 sm:hidden"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
       <div
-        @click="showSidebar = false"
-        class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-80"
-      ></div>
+        class="sidebarButton fixed inset-0 transition-opacity bg-gray-900 bg-opacity-80"
+      >
+      </div>
 
       <div
         class="fixed inset-0 items-center min-h-full text-center left-1/3 sm:p-0"
       >
-        <div class="w-full h-screen bg-dark">
+        <div class="w-full h-screen bg-slate-900">
           <div class="flex items-center justify-end w-full h-20 pr-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,29 +55,42 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-8 h-8 text-slate-400"
-              @click="showSidebar = false"
+              class="w-8 h-8 text-slate-400 sidebarButton cursor-pointer"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+                d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </div>
           <div>
             <ul
               class="flex flex-col items-center justify-end h-full text-slate-400 gap-y-10"
             >
-              <li class="hover:text-primary">About</li>
-              <li class="hover:text-primary">Experience</li>
-              <li class="hover:text-primary">Work</li>
-              <li class="hover:text-primary">Contact</li>
+              {
+                links.map((link) => (
+                  <li class="text-white cursor-pointer">{link.name}</li>
+                ))
+              }
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </header>
+
+<script>
+  const sidebar = document.querySelector(".sidebar");
+  const sidebarButton = document.querySelectorAll(".sidebarButton");
+
+  sidebarButton?.forEach((sideb) => {
+    sideb.addEventListener("click", () => {
+      if (sidebar?.classList.contains("hidden")) {
+        sidebar.classList.remove("hidden");
+      } else {
+        sidebar?.classList.add("hidden");
+      }
+    });
+  });
+</script>

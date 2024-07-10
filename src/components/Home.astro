@@ -1,3 +1,18 @@
+---
+import Header from "./Header.astro";
+---
+
+<div class="relative max-h-svh">
+  <video
+    src="/videos/coding.mp4"
+    class="absolute left-0 -z-10 w-full object-cover h-full opacity-40 blur-sm"
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="auto"
+    aria-label="Coding video background"></video>
+  <Header />
   <aside
     class="fixed top-0 bottom-0 items-end justify-center hidden w-20 md:flex pb-36"
   >
@@ -86,32 +101,29 @@
       </li>
     </ul>
   </aside>
-  <div class="pb-20 pl-10 pr-10 md:pl-20">
-    <section
-      class="min-h-screen pt-5 md:pt-10 lg:pt-20 lg:mx-auto lg:w-10/12"
-    >
+  <div class="px-5">
+    <section class="min-h-screen pt-5 md:pt-10 lg:pt-20 lg:mx-auto lg:w-10/12">
       <p class="text-lg text-primary">Hi, my name is</p>
-      <p class="mt-8 text-6xl font-bold md:text-7xl text-slate-400">
-        Andres Posada.
+      <p class="mt-8 text-7xl font-bold md:text-7xl text-white">
+        Andrés Posada
       </p>
       <p
-        class="mt-5 mb-10 text-4xl font-bold sm:text-5xl opacity-60 md:text-7xl text-cyan-300"
+        class="mt-5 mb-10 text-3xl font-bold sm:text-4xl opacity-60 md:text-5xl text-cyan-300"
       >
-        I build things for the web and mobile.
+        Software Engineer
       </p>
       <p
-        class="w-full text-xl sm:w-10/12 md:w-8/12 xl:w-6/12 opacity-60 text-slate-400"
+        class="w-full text-xl sm:w-10/12 md:w-8/12 xl:w-6/12 text-white text-balance"
       >
-        I'm a software engineer, I like building solutions with software,
-        and I'm constantly learning about new technologies, programming, and
-        how I can improve my skills.
+        I like building solutions for the web and mobiles.
       </p>
       <div class="mt-20">
         <button
-          class="w-full px-20 py-3 border rounded sm:w-auto border-primary text-primary hover:bg-primary hover:text-dark"
+          class="w-full px-20 py-3 border rounded sm:w-auto border-white text-white hover:bg-white hover:text-black"
         >
           Resume
         </button>
       </div>
     </section>
   </div>
+</div>
