@@ -1,17 +1,10 @@
 ---
+import Background from "./Background.astro";
 import Header from "./Header.astro";
 ---
 
 <div class="relative">
-  <video
-    src="/videos/coding.mp4"
-    class="absolute left-0 -z-10 w-full object-cover h-full opacity-40 blur-sm"
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="auto"
-    aria-label="Coding video background"></video>
+  <Background />
   <Header />
   <aside
     class="fixed top-0 bottom-0 items-end justify-center hidden w-20 md:flex pb-36"
@@ -103,7 +96,6 @@ import Header from "./Header.astro";
   </aside>
   <div class="px-5">
     <section class="min-h-screen pt-5 md:pt-10 lg:pt-20 lg:mx-auto lg:w-10/12">
-      <p class="text-lg text-primary">Hi, my name is</p>
       <p class="mt-8 text-7xl font-bold md:text-7xl text-white">
         Andrés Posada
       </p>
@@ -115,7 +107,7 @@ import Header from "./Header.astro";
       <p
         class="w-full text-xl sm:w-10/12 md:w-8/12 xl:w-6/12 text-white text-balance"
       >
-        I like building solutions for the web and mobiles.
+        I like building solutions for web and mobiles devices.
       </p>
       <div class="mt-20">
         <button
