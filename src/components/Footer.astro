@@ -2,24 +2,18 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer-container">
-  <div class="footer-content">
-    <div class="footer-bottom">
-      <p class="copyright">
+<footer
+  class="bg-white/[0.02] backdrop-blur-xl border-t border-cyan-400/10 mt-16 relative footer-container"
+>
+  <div class="max-w-[1250px] mx-auto py-8 px-4 lg:py-16 lg:px-8">
+    <div class="text-center">
+      <p class="text-white/60 text-sm font-normal m-0">
         © {currentYear} Andrés Posada. All rights reserved.
       </p>
     </div>
   </div>
 
   <style>
-    .footer-container {
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(0, 212, 255, 0.1);
-      margin-top: 4rem;
-      position: relative;
-    }
-
     .footer-container::before {
       content: "";
       position: absolute;
@@ -33,30 +27,6 @@ const currentYear = new Date().getFullYear();
         rgba(0, 212, 255, 0.5),
         transparent
       );
-    }
-
-    .footer-content {
-      max-width: 1250px;
-      margin: 0 auto;
-    }
-
-    /* Footer Bottom */
-    .footer-bottom {
-      text-align: center;
-    }
-
-    .copyright {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.875rem;
-      margin: 0;
-      font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-    }
-
-    /* Responsive Adjustments */
-    @media (min-width: 1024px) {
-      .footer-content {
-        padding: 4rem 2rem 2rem;
-      }
     }
   </style>
 </footer>

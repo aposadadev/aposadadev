@@ -7,18 +7,22 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="font-sans bg-slate-950 dark min-h-screen overflow-x-hidden layout-html"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="relative m-0 p-0 bg-transparent layout-body">
     <slot />
   </body>
 </html>
 <style is:global>
+  /* CSS variables para colores personalizados */
   :root {
     --neon-cyan: #00ffff;
     --neon-pink: #ff00ff;
@@ -30,15 +34,8 @@ const { title } = Astro.props;
     --grid-color: rgba(0, 255, 255, 0.1);
   }
 
-  html {
-    font-family:
-      "Inter",
-      "Segoe UI",
-      system-ui,
-      -apple-system,
-      sans-serif;
-    background: var(--darker-bg);
-    color-scheme: dark;
+  /* Background complejo con múltiples gradientes */
+  .layout-html {
     background: radial-gradient(
         ellipse 50% 80% at 20% 40%,
         rgba(0, 255, 255, 0.15),
@@ -56,18 +53,11 @@ const { title } = Astro.props;
       ),
       linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
     background-attachment: fixed;
-    min-height: 100vh;
-    overflow-x: hidden;
+    color-scheme: dark;
   }
 
-  body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-  }
-
-  body::before {
+  /* Grid pattern animado complejo */
+  .layout-body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -99,15 +89,10 @@ const { title } = Astro.props;
       opacity: 0.7;
     }
   }
+
+  /* Font mono para código */
   code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+    font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono",
+      "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
   }
 </style>
