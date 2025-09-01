@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Home from "../components/Home.astro";
+import Background from "../components/Background.astro";
 ---
 
 <Layout title="Andres Posada">
+  <Background />
   <Home />
   <main>
     <h1>
@@ -182,10 +184,81 @@ import Home from "../components/Home.astro";
 
 <style>
   main {
-    margin: auto;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1250px;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   }
+
+  main h1 {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 1rem 0;
+    font-weight: 400;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    text-shadow: none;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    main {
+      padding: 2rem;
+    }
+
+    main h1 {
+      font-size: 1.1rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    main {
+      padding: 2rem 3rem;
+    }
+
+    main h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  main h1:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+  }
+
+  /* Efectos suaves para variedad */
+  main h1:nth-child(even) {
+    border-color: rgba(0, 212, 255, 0.1);
+  }
+
+  main h1:nth-child(even):hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.05);
+  }
+
+  main h1:nth-child(3n) {
+    border-color: rgba(156, 64, 255, 0.1);
+  }
+
+  main h1:nth-child(3n):hover {
+    border-color: rgba(156, 64, 255, 0.3);
+    background: rgba(156, 64, 255, 0.05);
+  }
+
+  /* Estilo más limpio sin animaciones intermitentes */
 </style>

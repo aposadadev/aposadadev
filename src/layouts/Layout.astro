@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
@@ -20,22 +20,84 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    --neon-cyan: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff00;
+    --neon-purple: #8b00ff;
+    --neon-orange: #ff6600;
+    --dark-bg: #0a0a0f;
+    --darker-bg: #050508;
+    --grid-color: rgba(0, 255, 255, 0.1);
   }
+
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-    color-scheme: dark light;
-    background: radial-gradient(#104f55, #000000);
+    font-family:
+      "Inter",
+      "Segoe UI",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    background: var(--darker-bg);
+    color-scheme: dark;
+    background: radial-gradient(
+        ellipse 50% 80% at 20% 40%,
+        rgba(0, 255, 255, 0.15),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 50% 80% at 80% 60%,
+        rgba(255, 0, 255, 0.15),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 100% 80% at 50% 100%,
+        rgba(139, 0, 255, 0.1),
+        transparent
+      ),
+      linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(0, 255, 255, 0.03) 100px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 98px,
+        rgba(255, 0, 255, 0.03) 100px
+      );
+    pointer-events: none;
+    z-index: -1;
+    animation: grid-glow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes grid-glow {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.7;
+    }
   }
   code {
     font-family:
