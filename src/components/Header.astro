@@ -11,7 +11,7 @@ const links = [
   class="fixed top-0 left-0 right-0 z-[1000] bg-transparent backdrop-blur-none border-b border-transparent transition-all duration-300 ease-out h-20 header-container"
 >
   <div
-    class="max-w-[1250px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between"
+    class="mx-auto w-full max-w-[1250px] px-4 lg:px-12 h-full flex items-center justify-between"
   >
     <!-- Logo/Brand -->
     <div class="z-[1001]">
@@ -20,7 +20,7 @@ const links = [
         class="flex items-center no-underline transition-all duration-300 group"
       >
         <span
-          class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent transition-all duration-300 brand-text group-hover:scale-105"
+          class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_20px_rgba(0,212,255,0.3)]"
           >AP</span
         >
       </a>
@@ -34,9 +34,9 @@ const links = [
             <li class="relative">
               <a
                 href={link.href}
-                class="nav-link flex items-center gap-2 no-underline text-white/90 text-sm lg:text-base font-medium transition-all duration-300 py-2 relative hover:text-cyan-400 hover:-translate-y-0.5"
+                class="nav-link flex items-center gap-2 no-underline text-white/90 text-sm lg:text-base font-medium transition-all duration-300 py-2 relative hover:text-cyan-400 hover:-translate-y-0.5 drop-shadow-sm"
               >
-                <span class="text-cyan-400 text-xs lg:text-sm font-medium nav-number">
+                <span class="text-cyan-400 text-xs lg:text-sm font-medium drop-shadow-[0_0_10px_rgba(0,212,255,0.4)]">
                   0{index + 1}.
                 </span>
                 {link.name}
@@ -74,10 +74,10 @@ const links = [
       >
       </div>
       <div
-        class="mobile-sidebar-content absolute top-0 right-0 w-72 h-screen bg-slate-900/95 backdrop-blur-xl border-l border-cyan-400/20 translate-x-full transition-transform duration-300 flex flex-col"
+        class="mobile-sidebar-content absolute top-0 right-0 w-72 h-screen bg-slate-900 border-l border-cyan-400/20 translate-x-full transition-transform duration-300 flex flex-col"
       >
         <div
-          class="flex justify-end items-center h-20 px-6 border-b border-white/10"
+          class="flex justify-end items-center h-20 px-4 border-b border-white/10"
         >
           <button
             class="mobile-close-button flex items-center justify-center w-10 h-10 bg-transparent border-none cursor-pointer text-white/80 transition-all duration-300 rounded-full hover:text-cyan-400 hover:bg-cyan-400/10"
@@ -98,7 +98,7 @@ const links = [
             </svg>
           </button>
         </div>
-        <nav class="flex-1 p-8 px-6">
+        <nav class="flex-1 p-6 px-4">
           <ul class="list-none m-0 p-0 flex flex-col gap-6">
             {
               links.map((link, index) => (
@@ -153,21 +153,9 @@ const links = [
     opacity: 1;
   }
 
-  /* Brand text shadow */
-  .brand-text {
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-  }
-
-  /* Nav link effects */
-  .nav-link {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-number {
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
-  }
-
-  .nav-link::after {
+  /* Nav and mobile link effects */
+  .nav-link::after,
+  .mobile-nav-link::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -178,61 +166,44 @@ const links = [
     transition: width 0.3s ease;
   }
 
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
-  }
-
-  .nav-link.active {
-    color: #00d4ff;
-  }
-
-  /* Hamburger lines gradient */
-  .hamburger-line {
-    background: linear-gradient(90deg, #00d4ff, #9c40ff);
-  }
-
-  /* Mobile menu active states */
-  .mobile-menu-button.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translateY(6px);
-  }
-
-  .mobile-menu-button.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mobile-menu-button.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translateY(-6px);
-  }
-
-  .mobile-sidebar.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .mobile-sidebar.active .mobile-sidebar-content {
-    transform: translateX(0);
-  }
-
-  /* Mobile nav link effects */
   .mobile-nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
     bottom: 0.5rem;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #00d4ff, #9c40ff);
-    transition: width 0.3s ease;
   }
 
+  .nav-link:hover::after,
+  .nav-link.active::after,
   .mobile-nav-link:hover::after,
   .mobile-nav-link.active::after {
     width: 100%;
   }
 
+  .nav-link.active,
   .mobile-nav-link.active {
     color: #00d4ff;
+  }
+
+  /* Hamburger states */
+  .hamburger-line {
+    background: linear-gradient(90deg, #00d4ff, #9c40ff);
+  }
+
+  .mobile-menu-button.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+  }
+  .mobile-menu-button.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-button.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+
+  /* Mobile sidebar states */
+  .mobile-sidebar.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .mobile-sidebar.active .mobile-sidebar-content {
+    transform: translateX(0);
   }
 
   /* Smooth scroll offset */
