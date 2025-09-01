@@ -1,411 +1,62 @@
 ---
 const currentYear = new Date().getFullYear();
-
-const footerLinks = [
-  {
-    title: "Navigation",
-    links: [
-      { name: "About", href: "#about" },
-      { name: "Experience", href: "#experience" },
-      { name: "Work", href: "#work" },
-      { name: "Contact", href: "#contact" },
-    ],
-  },
-  {
-    title: "Social",
-    links: [
-      { name: "GitHub", href: "https://github.com", external: true },
-      { name: "LinkedIn", href: "https://linkedin.com", external: true },
-      { name: "Twitter", href: "https://twitter.com", external: true },
-      { name: "Instagram", href: "https://instagram.com", external: true },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { name: "Resume", href: "/resume.pdf", external: true },
-      { name: "Portfolio", href: "#work" },
-      { name: "Blog", href: "#blog" },
-      { name: "Contact", href: "#contact" },
-    ],
-  },
-];
-
-const socialIcons = [
-  {
-    name: "GitHub",
-    href: "https://github.com",
-    icon: `<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>`,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: `<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-           <path d="M8 11l0 5"></path>
-           <path d="M8 8l0 .01"></path>
-           <path d="M12 16l0 -5"></path>
-           <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>`,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com",
-    icon: `<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"></path>`,
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com",
-    icon: `<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
-           <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-           <path d="M16.5 7.5l0 .01"></path>`,
-  },
-];
 ---
 
 <footer class="footer-container">
   <div class="footer-content">
-    <!-- Main Footer Content -->
-    <div class="footer-main">
-      <!-- Logo/Brand Section -->
-      <div class="footer-brand">
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-          {
-            socialIcons.map((social) => (
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-link"
-                aria-label={social.name}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <Fragment set:html={social.icon} />
-                </svg>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-
-      <!-- Footer Links -->
-      <div class="footer-links">
-        {
-          footerLinks.map((section) => (
-            <div class="footer-section">
-              <h4 class="section-title">{section.title}</h4>
-              <ul class="section-links">
-                {section.links.map((link) => (
-                  <li>
-                    <a
-                      href={link.href}
-                      class="footer-link"
-                      target={link.external ? "_blank" : "_self"}
-                      rel={link.external ? "noopener noreferrer" : ""}
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <p class="copyright">
-          © {currentYear} Andrés Posada. All rights reserved.
-        </p>
-      </div>
+      <p class="copyright">
+        © {currentYear} Andrés Posada. All rights reserved.
+      </p>
     </div>
   </div>
-</footer>
 
-<style>
-  .footer-container {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-    margin-top: 4rem;
-    position: relative;
-  }
-
-  .footer-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 212, 255, 0.5),
-      transparent
-    );
-  }
-
-  .footer-content {
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 3rem 1rem 1rem;
-  }
-
-  .footer-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  @media (min-width: 768px) {
-    .footer-main {
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
+  <style>
+    .footer-container {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+      margin-top: 4rem;
+      position: relative;
     }
-  }
 
-  /* Brand Section */
-  .footer-brand {
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer-brand {
-      text-align: left;
+    .footer-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 212, 255, 0.5),
+        transparent
+      );
     }
-  }
 
-  .brand-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #00d4ff 0%, #9c40ff 50%, #ff006e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0 0 0.5rem 0;
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-  }
-
-  .brand-subtitle {
-    color: #00d4ff;
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 0 1rem 0;
-    opacity: 0.9;
-  }
-
-  .brand-description {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0 0 2rem 0;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (min-width: 768px) {
-    .brand-description {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  /* Social Icons */
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  @media (min-width: 768px) {
-    .social-icons {
-      justify-content: flex-start;
-    }
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #9ca3af;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .social-link:hover {
-    color: #00d4ff;
-    background: rgba(0, 212, 255, 0.1);
-    border-color: rgba(0, 212, 255, 0.3);
-    transform: translateY(-2px);
-  }
-
-  /* Footer Links */
-  .footer-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-  }
-
-  .footer-section {
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer-section {
-      text-align: left;
-    }
-  }
-
-  .section-title {
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-  }
-
-  .section-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .section-links li {
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-link {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .footer-link:hover {
-    color: #00d4ff;
-    transform: translateX(4px);
-  }
-
-  /* Newsletter Section */
-  .newsletter-section {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .newsletter-title {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-  }
-
-  .newsletter-description {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin: 0 0 1.5rem 0;
-  }
-
-  .newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-    max-width: 400px;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-
-  @media (min-width: 480px) {
-    .newsletter-form {
-      flex-direction: row;
-    }
-  }
-
-  /* Footer Bottom */
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1.5rem;
-  }
-
-  .footer-bottom-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer-bottom-content {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-    }
-  }
-
-  .copyright {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.875rem;
-    margin: 0;
-  }
-
-  .footer-bottom-links {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media (min-width: 768px) {
-    .footer-bottom-links {
-      justify-content: flex-end;
-    }
-  }
-
-  .footer-bottom-link {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: all 0.3s ease;
-  }
-
-  .footer-bottom-link:hover {
-    color: #00d4ff;
-  }
-
-  /* Responsive Adjustments */
-  @media (min-width: 1024px) {
     .footer-content {
-      padding: 4rem 2rem 2rem;
+      max-width: 1250px;
+      margin: 0 auto;
     }
-  }
-</style>
+
+    /* Footer Bottom */
+    .footer-bottom {
+      text-align: center;
+    }
+
+    .copyright {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.875rem;
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    }
+
+    /* Responsive Adjustments */
+    @media (min-width: 1024px) {
+      .footer-content {
+        padding: 4rem 2rem 2rem;
+      }
+    }
+  </style>
+</footer>
