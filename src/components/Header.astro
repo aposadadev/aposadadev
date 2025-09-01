@@ -464,7 +464,9 @@ const links = [
 
     // Scroll effect for header
     let lastScrollTop = 0;
-    window.addEventListener("scroll", function () {
+
+    // Function to check scroll position and update header
+    function checkScrollPosition() {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
 
@@ -477,7 +479,12 @@ const links = [
       }
 
       lastScrollTop = scrollTop;
-    });
+    }
+
+    // Check initial scroll position on load
+    checkScrollPosition();
+
+    window.addEventListener("scroll", checkScrollPosition);
 
     // Mobile menu toggle
     function toggleMobileMenu() {
@@ -538,6 +545,7 @@ const links = [
         "section[id]"
       ) as NodeListOf<HTMLElement>;
       const scrollPos = window.scrollY + 100;
+      let activeSection = null;
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
@@ -549,16 +557,26 @@ const links = [
           scrollPos >= sectionTop &&
           scrollPos < sectionTop + sectionHeight
         ) {
-          // Remove active class from all links
-          navLinks.forEach((link) => link.classList.remove("active"));
-
-          // Add active class to current section links
-          const activeLinks = document.querySelectorAll(
-            `a[href="#${sectionId}"]`
-          ) as NodeListOf<HTMLAnchorElement>;
-          activeLinks.forEach((link) => link.classList.add("active"));
+          activeSection = sectionId;
         }
       });
+
+      // Remove active class from all links
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      // If we found an active section, highlight it
+      if (activeSection) {
+        const activeLinks = document.querySelectorAll(
+          `a[href="#${activeSection}"]`
+        ) as NodeListOf<HTMLAnchorElement>;
+        activeLinks.forEach((link) => link.classList.add("active"));
+      } else {
+        // If no section is active (we're at the top), activate Home link
+        const homeLinks = document.querySelectorAll(
+          `a[href="#home"]`
+        ) as NodeListOf<HTMLAnchorElement>;
+        homeLinks.forEach((link) => link.classList.add("active"));
+      }
     }
 
     // Update active link on scroll

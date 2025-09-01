@@ -47,6 +47,13 @@
     pointer-events: none;
     z-index: -10;
     overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .cyberpunk-background.hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 
   /* Capas de parallax */
@@ -406,6 +413,7 @@
     const parallaxBack = document.querySelector(".parallax-back");
     const parallaxMid = document.querySelector(".parallax-mid");
     const parallaxFront = document.querySelector(".parallax-front");
+    const cyberpunkBackground = document.querySelector(".cyberpunk-background");
 
     function updateParallax() {
       const scrolled = window.pageYOffset;
@@ -424,11 +432,31 @@
       }
     }
 
+    function updateBackgroundVisibility() {
+      const scrollTop = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+
+      if (cyberpunkBackground) {
+        // Hide background when scrolled more than 80% of viewport height
+        if (scrollTop > windowHeight * 0.8) {
+          cyberpunkBackground.classList.add("hidden");
+        } else {
+          cyberpunkBackground.classList.remove("hidden");
+        }
+      }
+    }
+
+    // Check initial state
+    updateBackgroundVisibility();
+
     // Optimización con requestAnimationFrame
     let ticking = false;
     function requestTick() {
       if (!ticking) {
-        requestAnimationFrame(updateParallax);
+        requestAnimationFrame(() => {
+          updateParallax();
+          updateBackgroundVisibility();
+        });
         ticking = true;
         setTimeout(() => {
           ticking = false;
