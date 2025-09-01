@@ -84,6 +84,50 @@ const experiences = [
   </div>
 </section>
 
+<script>
+  // Intersection Observer for viewport-triggered animations
+  document.addEventListener("DOMContentLoaded", () => {
+    const experienceSection = document.querySelector(".experience-section");
+
+    // Ensure the element exists
+    if (!experienceSection) return;
+
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      // If user prefers reduced motion, show section immediately
+      experienceSection.classList.add("animate");
+      return;
+    }
+
+    // Create intersection observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add animation class when section enters viewport
+            entry.target.classList.add("animate");
+            // Stop observing this element once it's animated
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        // Trigger when 20% of the section is visible
+        threshold: 0.2,
+        // Add some margin to trigger slightly before entering viewport
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe the entire experience section
+    observer.observe(experienceSection);
+  });
+</script>
+
 <style>
   .experience-section {
     padding: 2rem 0 4rem 0;
@@ -577,35 +621,36 @@ const experiences = [
     }
   }
 
-  /* Animation for timeline items - Mobile and tablet */
+  /* Viewport-triggered animations - entire section at once */
   @media (prefers-reduced-motion: no-preference) and (max-width: 1023px) {
     .timeline-item {
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 0.6s ease forwards;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
     }
 
-    .timeline-item:nth-child(1) {
-      animation-delay: 0.1s;
-    }
-    .timeline-item:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    .timeline-item:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-    .timeline-item:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-    .timeline-item:nth-child(5) {
-      animation-delay: 0.5s;
+    /* Animation classes that will be added by JavaScript */
+    .experience-section.animate .timeline-item {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .experience-section.animate .timeline-item:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+    .experience-section.animate .timeline-item:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+    .experience-section.animate .timeline-item:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+    .experience-section.animate .timeline-item:nth-child(4) {
+      transition-delay: 0.4s;
+    }
+    .experience-section.animate .timeline-item:nth-child(5) {
+      transition-delay: 0.5s;
     }
   }
 
@@ -613,30 +658,39 @@ const experiences = [
   @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
     .timeline-item .timeline-content {
       opacity: 0;
+      transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
     }
 
     .timeline-item:nth-child(odd) .timeline-content {
-      animation: slideInLeft 0.8s ease-out forwards;
+      transform: translateX(-50px);
     }
 
     .timeline-item:nth-child(even) .timeline-content {
-      animation: slideInRight 0.8s ease-out forwards;
+      transform: translateX(50px);
     }
 
-    .timeline-item:nth-child(1) .timeline-content {
-      animation-delay: 0.2s;
+    /* Animation classes that will be added by JavaScript */
+    .experience-section.animate .timeline-item .timeline-content {
+      opacity: 1;
+      transform: translateX(0);
     }
-    .timeline-item:nth-child(2) .timeline-content {
-      animation-delay: 0.4s;
+
+    .experience-section.animate .timeline-item:nth-child(1) .timeline-content {
+      transition-delay: 0.2s;
     }
-    .timeline-item:nth-child(3) .timeline-content {
-      animation-delay: 0.6s;
+    .experience-section.animate .timeline-item:nth-child(2) .timeline-content {
+      transition-delay: 0.4s;
     }
-    .timeline-item:nth-child(4) .timeline-content {
-      animation-delay: 0.8s;
+    .experience-section.animate .timeline-item:nth-child(3) .timeline-content {
+      transition-delay: 0.6s;
     }
-    .timeline-item:nth-child(5) .timeline-content {
-      animation-delay: 1s;
+    .experience-section.animate .timeline-item:nth-child(4) .timeline-content {
+      transition-delay: 0.8s;
+    }
+    .experience-section.animate .timeline-item:nth-child(5) .timeline-content {
+      transition-delay: 1s;
     }
   }
 </style>
