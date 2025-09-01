@@ -415,6 +415,16 @@
     const parallaxFront = document.querySelector(".parallax-front");
     const cyberpunkBackground = document.querySelector(".cyberpunk-background");
 
+    // Reset scroll position on page load to prevent background displacement
+    function initializeParallax() {
+      // Force initial parallax calculation to ensure proper positioning
+      requestAnimationFrame(() => {
+        updateParallax();
+        // Double-check after a brief delay to ensure DOM is fully ready
+        setTimeout(updateParallax, 100);
+      });
+    }
+
     function updateParallax() {
       const scrolled = window.pageYOffset;
       const rate1 = scrolled * -0.3; // Capa trasera más lenta
@@ -432,22 +442,8 @@
       }
     }
 
-    function updateBackgroundVisibility() {
-      const scrollTop = window.pageYOffset;
-      const windowHeight = window.innerHeight;
-
-      if (cyberpunkBackground) {
-        // Hide background when scrolled more than 80% of viewport height
-        if (scrollTop > windowHeight * 0.8) {
-          cyberpunkBackground.classList.add("hidden");
-        } else {
-          cyberpunkBackground.classList.remove("hidden");
-        }
-      }
-    }
-
-    // Check initial state
-    updateBackgroundVisibility();
+    // Initialize parallax properly on page load
+    initializeParallax();
 
     // Optimización con requestAnimationFrame
     let ticking = false;
@@ -455,7 +451,6 @@
       if (!ticking) {
         requestAnimationFrame(() => {
           updateParallax();
-          updateBackgroundVisibility();
         });
         ticking = true;
         setTimeout(() => {
