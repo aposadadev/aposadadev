@@ -1,0 +1,499 @@
+---
+// About Component
+---
+
+<section id="about" class="about-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-number">01.</span>
+        About Me
+      </h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <!-- Main Content Grid -->
+      <div class="content-grid">
+        <!-- Text Content -->
+        <div class="about-text">
+          <div class="text-content">
+            <p class="intro-text">
+              Hello! I'm Andrés Posada, a software engineer with 7 years of
+              experience in web and mobile development, specializing in
+              JavaScript, Node.js, React, Vue and SQL. I have participated in
+              projects from conception to production deployment, designing APIs,
+              databases, real-time applications and modernizing critical
+              platforms.
+            </p>
+
+            <p>
+              Throughout my career, I've had the privilege of working across
+              diverse sectors including
+              <a href="#" class="highlight-link">healthcare</a>,
+              <a href="#" class="highlight-link">financial services</a>, and
+              <a href="#" class="highlight-link">airport management</a>. My
+              expertise spans from building scalable backend architectures to
+              crafting intuitive user interfaces, with a strong focus on
+              real-time applications and system modernization.
+            </p>
+
+            <p>
+              I'm passionate about creating robust, efficient solutions that
+              solve real-world problems. Whether it's developing instant
+              messaging platforms, payment systems, or healthcare management
+              software, I bring a comprehensive approach that covers the entire
+              development lifecycle.
+            </p>
+
+            <p class="technologies-intro">
+              Here are the key technologies I work with:
+            </p>
+
+            <!-- Technologies List -->
+            <div class="technologies-grid">
+              <ul class="tech-list">
+                <li class="tech-item">JavaScript (ES6+)</li>
+                <li class="tech-item">Node.js</li>
+                <li class="tech-item">React / React Native</li>
+                <li class="tech-item">Vue.js</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech-item">PostgreSQL / SQL Server</li>
+                <li class="tech-item">Socket.io</li>
+                <li class="tech-item">Fastify / NestJS</li>
+                <li class="tech-item">MySQL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Side -->
+        <div class="about-image">
+          <div class="image-wrapper">
+            <div class="image-overlay"></div>
+            <img
+              src="/hero-image.jpg"
+              alt="Andrés Posada working"
+              class="profile-image"
+            />
+            <div class="image-border"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="experience-timeline">
+        <h3 class="timeline-title">Professional Experience</h3>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024 - Present</div>
+              <h4 class="timeline-job">Software Engineer</h4>
+              <p class="timeline-company">Momenge</p>
+              <p class="timeline-description">
+                Developing an instant messaging application using Fastify,
+                PostgreSQL, React Native and Socket.io. Implementing real-time
+                event logic, multimedia handling, and account recovery systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2021 - 2024</div>
+              <h4 class="timeline-job">Full Stack Developer</h4>
+              <p class="timeline-company">WeAre Dev</p>
+              <p class="timeline-description">
+                Designed and developed a remittance platform from scratch using
+                Node.js, React, and PostgreSQL. Led migration of legacy systems
+                for online payments and loan management, modernizing critical
+                financial infrastructure.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2020 - 2021</div>
+              <h4 class="timeline-job">Full Stack Developer</h4>
+              <p class="timeline-company">O.S Group</p>
+              <p class="timeline-description">
+                Built a comprehensive platform for credit management and payment
+                processing using NestJS and Vue.js. Focused on creating secure,
+                scalable financial solutions with robust user interfaces.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2019 - 2020</div>
+              <h4 class="timeline-job">Web & Mobile Developer</h4>
+              <p class="timeline-company">PLM Group</p>
+              <p class="timeline-description">
+                Developed web and mobile applications for El Dorado Airport's
+                official website. Integrated services for users, flights, and
+                COVID surveys, handling high-traffic airport operations.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2018 - 2019</div>
+              <h4 class="timeline-job">Lead Software Developer</h4>
+              <p class="timeline-company">Sumimedical</p>
+              <p class="timeline-description">
+                Led development of comprehensive healthcare software with
+                patient management, inventory control, real-time chat, and
+                multi-database integration (SQL Server, PostgreSQL, MySQL).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 4rem 0 6rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1250px;
+    padding: 0 1rem;
+  }
+
+  /* Section Header */
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .title-number {
+    background: linear-gradient(90deg, #00d4ff 0%, #9c40ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .title-underline {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff 0%, #9c40ff 100%);
+    margin: 0 auto;
+    border-radius: 1px;
+  }
+
+  /* Content Grid */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  /* About Text */
+  .about-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.7;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .highlight-link {
+    color: #00d4ff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .highlight-link:hover {
+    color: #9c40ff;
+  }
+
+  .highlight-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #00d4ff 0%, #9c40ff 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .highlight-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .technologies-intro {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  /* Technologies Grid */
+  .technologies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tech-item {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .tech-item::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+  }
+
+  /* About Image */
+  .about-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 350px;
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    filter: grayscale(20%);
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 255, 0.2),
+      rgba(156, 64, 255, 0.2)
+    );
+    border-radius: 12px;
+    z-index: 3;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 12px;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  .image-wrapper:hover .profile-image {
+    transform: translate(-10px, -10px);
+    filter: grayscale(0%);
+  }
+
+  .image-wrapper:hover .image-overlay {
+    opacity: 0.3;
+  }
+
+  .image-wrapper:hover .image-border {
+    transform: translate(10px, 10px);
+    border-color: rgba(156, 64, 255, 0.6);
+  }
+
+  /* Experience Timeline */
+  .experience-timeline {
+    margin-top: 4rem;
+  }
+
+  .timeline-title {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(90deg, #00d4ff 0%, #9c40ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #00d4ff 0%, #9c40ff 50%, #ff006e 100%);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: #00d4ff;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.3);
+  }
+
+  .timeline-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateX(10px);
+  }
+
+  .timeline-date {
+    color: #00d4ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-job {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-company {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .container {
+      padding: 0 2rem;
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: 3rem;
+    }
+
+    .image-wrapper {
+      width: 320px;
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 3rem;
+    }
+
+    .content-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+    }
+  }
+</style>
