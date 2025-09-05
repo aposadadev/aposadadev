@@ -232,21 +232,21 @@
           <!-- Carousel Navigation Dots -->
           <div class="flex justify-center mb-6 gap-2">
             <button
-              class="carousel-dot w-2 h-2 rounded-full bg-cyan-400/30 transition-all duration-300"
+              class="carousel-dot w-2 h-2 rounded-full bg-cyan-400/80 scale-110 transition-all duration-300 hover:bg-cyan-400/60"
               data-slide="0"></button>
             <button
-              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300 hover:bg-cyan-400/60"
               data-slide="1"></button>
             <button
-              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300 hover:bg-cyan-400/60"
               data-slide="2"></button>
             <button
-              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300"
+              class="carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300 hover:bg-cyan-400/60"
               data-slide="3"></button>
           </div>
 
           <!-- Carousel Container -->
-          <div class="skills-carousel overflow-hidden relative">
+          <div class="skills-carousel overflow-hidden relative touch-pan-x">
             <div
               class="carousel-track flex transition-transform duration-300 ease-out"
               style="transform: translateX(0%);"
@@ -400,24 +400,7 @@
 
 <style>
   @media (hover: none) and (pointer: coarse) {
-    .hover\\:-translate-y-1:hover {
-      transform: none;
-    }
-  }
-
-  /* Carousel Styles */
-  .carousel-dot.active {
-    background-color: rgba(0, 212, 255, 0.8);
-    transform: scale(1.2);
-  }
-
-  .carousel-dot:hover {
-    background-color: rgba(0, 212, 255, 0.6);
-  }
-
-  /* Touch/Swipe Support */
-  .skills-carousel {
-    touch-action: pan-x;
+    .hover\\:-translate-y-1:hover { transform: none; }
   }
 </style>
 
@@ -445,24 +428,18 @@
       // Update slide position
       const translateX = -slideIndex * 100;
       carouselTrack.style.transform = `translateX(${translateX}%)`;
-
-      // Update dots
+      
+      // Update dots with Tailwind classes
       carouselDots.forEach((dot, index) => {
         if (index === slideIndex) {
-          dot.classList.add("active");
-          dot.style.backgroundColor = "rgba(0, 212, 255, 0.8)";
-          dot.style.transform = "scale(1.2)";
+          dot.className = 'carousel-dot w-2 h-2 rounded-full bg-cyan-400/80 scale-110 transition-all duration-300 hover:bg-cyan-400/60';
         } else {
-          dot.classList.remove("active");
-          dot.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-          dot.style.transform = "scale(1)";
+          dot.className = 'carousel-dot w-2 h-2 rounded-full bg-white/20 transition-all duration-300 hover:bg-cyan-400/60';
         }
       });
-
+      
       currentSlide = slideIndex;
-    }
-
-    // Dot navigation
+    }    // Dot navigation
     carouselDots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         updateCarousel(index);
