@@ -86,26 +86,68 @@ const experiences = [
         >
           {
             experiences.map((experience, index) => (
-              <div class="timeline-item relative pb-8 lg:pb-12 ml-3 sm:ml-4 lg:ml-0 last:pb-0">
-                <div class="timeline-marker absolute bg-cyan-400 rounded-full border-2 sm:border-4 border-black/50 shadow-[0_0_0_2px_rgba(0,212,255,0.3)] sm:shadow-[0_0_0_4px_rgba(0,212,255,0.3)] z-10" />
-                <div class="timeline-content bg-white/5 border border-white/10 rounded-lg sm:rounded-xl lg:rounded-2xl p-5 sm:p-6 lg:p-8 xl:p-10 backdrop-blur-sm transition-all duration-300 relative overflow-hidden mr-2 sm:mr-0 hover:bg-white/8 hover:border-cyan-400/30 hover:translate-x-1 sm:hover:translate-x-2 lg:hover:-translate-y-1">
+              <div
+                class={`timeline-item relative mb-6 lg:mb-8 ml-3 sm:ml-4 lg:ml-0 ${index >= 3 ? "hidden-experience opacity-0 overflow-hidden" : ""}`}
+                style={
+                  index >= 3
+                    ? "max-height: 0; margin-bottom: 0; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+                    : "transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+                }
+              >
+                <div
+                  class={`timeline-marker absolute bg-cyan-400 rounded-full border-2 sm:border-4 border-black/50 shadow-[0_0_0_2px_rgba(0,212,255,0.3)] sm:shadow-[0_0_0_4px_rgba(0,212,255,0.3)] z-10 ${index >= 3 ? "hidden-marker opacity-0" : ""}`}
+                  style="transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+                />
+                <div class="timeline-content bg-white/5 border border-white/10 rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 xl:p-7 backdrop-blur-sm transition-all duration-300 relative overflow-hidden mr-2 sm:mr-0 hover:bg-white/8 hover:border-cyan-400/30 hover:translate-x-1 sm:hover:translate-x-2 lg:hover:-translate-y-1">
                   <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-purple-500 opacity-0 hover-accent transition-opacity duration-300" />
-                  <div class="text-cyan-400 text-xs sm:text-sm md:text-base font-medium mb-2">
+                  <div class="text-cyan-400 text-xs sm:text-sm font-medium mb-1.5">
                     {experience.date}
                   </div>
-                  <h4 class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-1 leading-tight">
+                  <h4 class="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-1 leading-tight">
                     {experience.position}
                   </h4>
-                  <p class="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-3 sm:mb-4 lg:mb-4">
+                  <p class="text-white/70 text-sm sm:text-base md:text-lg font-medium mb-2.5 sm:mb-3">
                     {experience.company}
                   </p>
-                  <p class="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed lg:leading-loose">
+                  <p class="text-white/80 text-sm sm:text-base leading-relaxed">
                     {experience.description}
                   </p>
                 </div>
               </div>
             ))
           }
+        </div>
+
+        <!-- Expand/Collapse Button -->
+        <div class="flex justify-center mt-6 lg:mt-8">
+          <button
+            id="toggleExperiences"
+            class="group relative px-6 py-3 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 border border-cyan-400/30 rounded-lg backdrop-blur-sm transition-all duration-300 hover:from-cyan-400/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+          >
+            <span
+              class="text-white font-medium text-sm sm:text-base flex items-center gap-2"
+            >
+              <span id="toggleText">Ver más experiencias</span>
+              <svg
+                id="toggleIcon"
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <!-- Gradient background effect on hover -->
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+            >
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -128,31 +170,91 @@ const experiences = [
     if (prefersReducedMotion) {
       // If user prefers reduced motion, show section immediately
       experienceSection.classList.add("animate");
-      return;
+    } else {
+      // Create intersection observer
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add animation class when section enters viewport
+              entry.target.classList.add("animate");
+              // Stop observing this element once it's animated
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          // Trigger when 20% of the section is visible
+          threshold: 0.2,
+          // Add some margin to trigger slightly before entering viewport
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      // Observe the entire experience section
+      observer.observe(experienceSection);
     }
 
-    // Create intersection observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add animation class when section enters viewport
-            entry.target.classList.add("animate");
-            // Stop observing this element once it's animated
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        // Trigger when 20% of the section is visible
-        threshold: 0.2,
-        // Add some margin to trigger slightly before entering viewport
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
+    // Experience expand/collapse functionality
+    const toggleButton = document.getElementById("toggleExperiences");
+    const toggleText = document.getElementById("toggleText");
+    const toggleIcon = document.getElementById("toggleIcon");
+    const hiddenExperiences = document.querySelectorAll(".hidden-experience");
 
-    // Observe the entire experience section
-    observer.observe(experienceSection);
+    let isExpanded = false;
+
+    if (toggleButton && hiddenExperiences.length > 0) {
+      toggleButton.addEventListener("click", () => {
+        isExpanded = !isExpanded;
+
+        if (isExpanded) {
+          // Show experiences with staggered animation
+          hiddenExperiences.forEach((experience, index) => {
+            const marker = experience.querySelector(".timeline-marker");
+            const experienceEl = experience as HTMLElement;
+
+            setTimeout(() => {
+              experienceEl.style.maxHeight = "350px";
+              experienceEl.style.marginBottom = "1.5rem";
+              experienceEl.style.opacity = "1";
+
+              // Show marker too
+              if (marker) {
+                (marker as HTMLElement).style.opacity = "1";
+                marker.classList.remove("opacity-0");
+                marker.classList.add("opacity-100");
+              }
+            }, index * 200);
+          });
+        } else {
+          // Hide experiences immediately
+          hiddenExperiences.forEach((experience, index) => {
+            const marker = experience.querySelector(".timeline-marker");
+            const experienceEl = experience as HTMLElement;
+
+            experienceEl.style.maxHeight = "0";
+            experienceEl.style.marginBottom = "0";
+            experienceEl.style.opacity = "0";
+
+            // Hide marker too
+            if (marker) {
+              (marker as HTMLElement).style.opacity = "0";
+              marker.classList.remove("opacity-100");
+              marker.classList.add("opacity-0");
+            }
+          });
+        }
+
+        // Update button text and icon
+        if (isExpanded) {
+          if (toggleText) toggleText.textContent = "Ver menos";
+          if (toggleIcon) toggleIcon.style.transform = "rotate(180deg)";
+        } else {
+          if (toggleText) toggleText.textContent = "Ver más experiencias";
+          if (toggleIcon) toggleIcon.style.transform = "rotate(0deg)";
+        }
+      });
+    }
   });
 </script>
 
@@ -173,12 +275,26 @@ const experiences = [
     background: linear-gradient(180deg, #00d4ff 0%, #9c40ff 50%, #ff006e 100%);
   }
 
-  /* Timeline marker positioning */
+  /* Timeline marker positioning - hidden on mobile */
+  .timeline-marker,
+  .timeline-marker.hidden-marker,
+  .hidden-marker {
+    display: none;
+  }
+
+  /* Smooth expand/collapse animation for experiences */
+  .timeline-item {
+    will-change: max-height, opacity, margin;
+  }
+
+  /* Specific animation for hidden experiences */
+  .hidden-experience {
+    will-change: max-height, opacity, margin;
+  }
+
+  /* Ensure markers are positioned correctly */
   .timeline-marker {
-    left: -1.5rem;
-    top: 0.5rem;
-    width: 10px;
-    height: 10px;
+    will-change: opacity;
   }
 
   /* Hover accent line */
@@ -207,10 +323,11 @@ const experiences = [
     .timeline-container::before {
       left: 1rem;
     }
-    .timeline-marker {
-      left: -2rem;
-      width: 12px;
-      height: 12px;
+    /* Keep markers hidden on tablet */
+    .timeline-marker,
+    .timeline-marker.hidden-marker,
+    .hidden-marker {
+      display: none;
     }
   }
 
@@ -219,6 +336,18 @@ const experiences = [
     .timeline-container::before {
       left: 50%;
       transform: translateX(-50%);
+    }
+
+    /* Show markers only on desktop */
+    .timeline-marker,
+    .timeline-marker.hidden-marker,
+    .hidden-marker {
+      display: block;
+      position: absolute;
+      left: 50% !important;
+      transform: translateX(-50%);
+      width: 16px !important;
+      height: 16px !important;
     }
 
     .timeline-item {
@@ -241,14 +370,6 @@ const experiences = [
     .timeline-content {
       width: 45%;
       margin-right: 2rem;
-    }
-
-    .timeline-marker {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 16px;
     }
 
     .timeline-item:nth-child(even) .timeline-content::after {
