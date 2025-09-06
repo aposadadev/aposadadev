@@ -1,54 +1,38 @@
-# Astro Starter Kit: Basics
+<h1 align="center">Hi 👋, I'm Andrés Posada</h1>
+<h3 align="center">Web developer from Colombia</h3>
 
-```sh
-npm create astro@latest -- --template basics
-```
+- 🔭 I’m currently working on **Nodejs, Vuejs and Reactjs**
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+- 🌱 I’m currently learning **Golang**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- :books: I'm currently reading **Seven databases in seven weeks**
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- 💬 Ask me about **Javascript - vue, react, expressjs, hapijs**
 
-## 🚀 Project Structure
+- 📫 How to reach me **andres.posada0919@gmail.com**
 
-Inside of your Astro project, you'll see the following folders and files:
+- :eyes: I'm currently watching **The Billion Dolar Code**
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+<p align="left">
+  <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" title="Chartjs" width="40" height="40"/>
+  <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/css_original_logo_icon_146575.png" alt="css3" title="CSS3" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg" alt="express" title="Expressjs" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" title="Git" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="html5" title="HTML5" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="javascript" title="Javascript" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="linux" title="Linux" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="mysql" title="MySQL" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="nodejs" title="Nodejs" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg" alt="nuxtjs" title="Nuxtjs" width="40" height="40"/> 
+  <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="postgresql" title="PostgreSQL" width="40" height="40"/>
+  <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt="vuejs" title="Vuejs" width="40" height="40"/>
+</p>
+<p>
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=andres0919&layout=compact&hide=html" alt="andres0919" />
+</p>
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<p align="center">
+  <a href="https://twitter.com/@andresposada09" target="blank">
+    <img align="center" src="https://www.vectorlogo.zone/logos/twitter/twitter-icon.svg" alt="@andresposada09" height="30" width="30" />
+  </a>
+</p>
