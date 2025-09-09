@@ -80,14 +80,14 @@ const experiences = [
       </div>
 
       <!-- Experience Timeline -->
-      <div class="relative">
+      <div class="relative overflow-visible">
         <div
-          class="timeline-container relative pl-6 sm:pl-8 lg:pl-0 max-w-full sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto"
+          class="timeline-container relative pl-6 sm:pl-8 lg:pl-0 max-w-full sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto overflow-visible"
         >
           {
             experiences.map((experience, index) => (
               <div
-                class={`timeline-item relative mb-6 lg:mb-8 ml-3 sm:ml-4 lg:ml-0 ${index >= 3 ? "hidden-experience opacity-0 overflow-hidden" : ""}`}
+                class={`timeline-item relative mb-6 lg:mb-8 ml-3 sm:ml-4 lg:ml-0 overflow-visible ${index >= 3 ? "hidden-experience opacity-0 overflow-hidden" : ""}`}
                 style={
                   index >= 3
                     ? "max-height: 0; margin-bottom: 0; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
@@ -348,6 +348,8 @@ const experiences = [
       transform: translateX(-50%);
       width: 16px !important;
       height: 16px !important;
+      top: 0.5rem !important;
+      z-index: 20 !important;
     }
 
     .timeline-item {
@@ -356,6 +358,8 @@ const experiences = [
       justify-content: flex-end;
       align-items: flex-start;
       margin-left: 0;
+      position: relative;
+      overflow: visible;
     }
 
     .timeline-item:nth-child(even) {
