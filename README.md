@@ -28,7 +28,7 @@
   <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt="vuejs" title="Vuejs" width="40" height="40"/>
 </p>
 <p>
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=andres0919&layout=compact&hide=html" alt="andres0919" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aposadadev&layout=compact&hide=html" alt="andres0919" />
 </p>
 
 <p align="center">
