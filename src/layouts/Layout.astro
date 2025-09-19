@@ -7,26 +7,35 @@ interface Props {
   lang?: "en" | "es";
 }
 
+import { useTranslations } from "../i18n/utils";
+
 const { title, description, image, url, lang = "en" } = Astro.props;
 
-// Default meta values
-const defaultDescription =
-  lang === "es"
-    ? "Andrés Posada - Desarrollador de Software Full Stack con más de 7 años de experiencia. Especializado en React, Node.js, y desarrollo de aplicaciones web modernas."
-    : "Andrés Posada - Full Stack Software Engineer with over 7 years of experience. Specialized in React, Node.js, and modern web application development.";
+// Validate lang prop
+if (lang && !["en", "es"].includes(lang)) {
+  throw new Error(`Invalid language: ${lang}. Supported languages: en, es`);
+}
 
-const defaultImage = "/hero.webp";
-const siteUrl =
-  url ||
-  (lang === "es" ? "https://aposadadev.com/es/" : "https://aposadadev.com/");
-const canonicalUrl =
-  url ||
-  (lang === "es" ? "https://aposadadev.com/es/" : "https://aposadadev.com/");
+// Constants
+const SITE_BASE_URL = "https://aposadadev.com";
+const DEFAULT_IMAGE = "/hero.webp";
+
+// Initialize translations
+const t = useTranslations(lang);
+
+// Default meta values
+const defaultDescription = t("meta.description");
+const defaultImage = DEFAULT_IMAGE;
+
+// URL handling - siteUrl and canonicalUrl are identical, so compute once
+const baseUrl = lang === "es" ? `${SITE_BASE_URL}/es/` : SITE_BASE_URL;
+const siteUrl = url || baseUrl;
+const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
 ---
 
 <!doctype html>
 <html
-  lang="en"
+  lang={lang}
   class="font-sans bg-slate-950 dark min-h-screen overflow-x-hidden layout-html"
 >
   <head>
@@ -39,11 +48,15 @@ const canonicalUrl =
     <meta name="description" content={description || defaultDescription} />
     <meta
       name="keywords"
-      content="software engineer, full stack developer, react, node.js, typescript, web development, mobile development, portfolio"
+      content="Andrés Posada, software engineer, full stack developer, React, Node.js, TypeScript, web development, mobile development, portfolio, Colombia, Bogotá, desarrollador de software, ingeniero de software"
     />
     <meta name="author" content="Andrés Posada" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content={lang} />
+    <meta name="geo.region" content="CO-DC" />
+    <meta name="geo.placename" content="Bogotá" />
+    <meta name="geo.position" content="4.7110;-74.0721" />
+    <meta name="ICBM" content="4.7110, -74.0721" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -86,6 +99,62 @@ const canonicalUrl =
       hreflang={lang === "es" ? "en" : "es"}
       href={lang === "es" ? siteUrl.replace("/es/", "/") : siteUrl + "es/"}
     />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Andrés Posada",
+        jobTitle: lang === "es" ? "Ingeniero de Software" : "Software Engineer",
+        url: siteUrl,
+        sameAs: [
+          "https://github.com/aposadadev",
+          "https://linkedin.com/in/aposadadev",
+          "https://twitter.com/aposadadev",
+          "https://instagram.com/aposadadev",
+        ],
+        knowsAbout: [
+          "React",
+          "Node.js",
+          "TypeScript",
+          "React Native",
+          "Fastify",
+          "NestJS",
+          "PostgreSQL",
+          "MongoDB",
+          "Full Stack Development",
+          "Web Development",
+          "Mobile Development",
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bogotá",
+          addressCountry: "Colombia",
+        },
+        description: description || defaultDescription,
+      })}
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      declare global {
+        interface Window {
+          dataLayer: any[];
+        }
+      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID");
+    </script>
   </head>
   <body class="relative m-0 p-0 bg-transparent layout-body">
     <slot />

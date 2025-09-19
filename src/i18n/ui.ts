@@ -106,6 +106,10 @@ export const ui = {
     // Footer
     "footer.copyright": "All rights reserved.",
 
+    // Meta
+    "meta.description":
+      "Andrés Posada - Full Stack Software Engineer with over 7 years of experience. Specialized in React, Node.js, and modern web application development.",
+
     // About section
     "about.hi":
       "Hi, I'm Andrés Posada, a software engineer with over 7 years of experience. I'm passionate about building great web and mobile products, from the initial idea to the final code.",
@@ -225,6 +229,10 @@ export const ui = {
 
     // Footer
     "footer.copyright": "Todos los derechos reservados.",
+
+    // Meta
+    "meta.description":
+      "Andrés Posada - Desarrollador de Software Full Stack con más de 7 años de experiencia. Especializado en React, Node.js, y desarrollo de aplicaciones web modernas.",
 
     // About section
     "about.hi":
