@@ -115,6 +115,11 @@ export const ui = {
     "about.opportunities":
       "I'm always open to new challenges and opportunities. Feel free to connect if you have a cool project or just want to talk about tech.",
     "about.technologiesSection": "Key Technologies & Skills",
+    "about.sectionTitle": "About Me",
+    "about.frontend": "Frontend",
+    "about.backend": "Backend",
+    "about.database": "Database",
+    "about.tools": "Tools & Other",
   },
   es: {
     // Home section
@@ -224,5 +229,10 @@ export const ui = {
     "about.opportunities":
       "Siempre estoy abierto a nuevos desafíos y oportunidades. Siéntete libre de conectarte si tienes un proyecto interesante o solo quieres hablar sobre tecnología.",
     "about.technologiesSection": "Tecnologías y Habilidades Clave",
+    "about.sectionTitle": "Sobre Mí",
+    "about.frontend": "Frontend",
+    "about.backend": "Backend",
+    "about.database": "Base de Datos",
+    "about.tools": "Herramientas y Otros",
   },
 } as const;
