@@ -97,6 +97,12 @@ export const ui = {
     "contact.formError":
       "Oops! Something went wrong. Please try again or contact me directly.",
 
+    // Navigation
+    "nav.about": "About",
+    "nav.experience": "Experience",
+    "nav.work": "Work",
+    "nav.contact": "Contact",
+
     // Footer
     "footer.copyright": "All rights reserved.",
 
@@ -210,6 +216,12 @@ export const ui = {
       "¡Mensaje enviado exitosamente! Me pondré en contacto contigo pronto.",
     "contact.formError":
       "¡Ups! Algo salió mal. Por favor intenta de nuevo o contáctame directamente.",
+
+    // Navigation
+    "nav.about": "Sobre Mí",
+    "nav.experience": "Experiencia",
+    "nav.work": "Proyectos",
+    "nav.contact": "Contacto",
 
     // Footer
     "footer.copyright": "Todos los derechos reservados.",
