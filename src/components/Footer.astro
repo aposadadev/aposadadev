@@ -1,4 +1,13 @@
 ---
+// Footer Component
+import { useTranslations } from "../i18n/utils";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,7 +17,7 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-[1250px] mx-auto py-8 px-4 lg:py-16 lg:px-8">
     <div class="text-center">
       <p class="text-white/60 text-sm font-normal m-0">
-        © {currentYear} Andrés Posada. All rights reserved.
+        © {currentYear} Andrés Posada. {t("footer.copyright")}
       </p>
     </div>
   </div>

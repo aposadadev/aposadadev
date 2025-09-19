@@ -378,7 +378,6 @@
     const parallaxBack = document.querySelector(".parallax-back");
     const parallaxMid = document.querySelector(".parallax-mid");
     const parallaxFront = document.querySelector(".parallax-front");
-    const cyberpunkBackground = document.querySelector(".cyberpunk-background");
 
     // Reset scroll position on page load to prevent background displacement
     function initializeParallax() {
@@ -391,7 +390,7 @@
     }
 
     function updateParallax() {
-      const scrolled = window.pageYOffset;
+      const scrolled = window.scrollY;
       const rate1 = scrolled * -0.3; // Capa trasera más lenta
       const rate2 = scrolled * -0.5; // Capa media
       const rate3 = scrolled * -0.7; // Capa delantera más rápida

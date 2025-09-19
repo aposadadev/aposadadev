@@ -1,5 +1,10 @@
 ---
 // About Component
+interface Props {
+  lang?: "en" | "es";
+}
+
+// const { lang } = Astro.props; // Not used in this component
 ---
 
 <section id="about" class="py-16 lg:py-24 relative z-10 bg-white/[0.01]">
@@ -73,6 +78,7 @@
               src="/about-image.webp"
               alt="Andrés Posada working"
               class="absolute w-full h-full object-cover rounded-xl top-8"
+              loading="lazy"
             />
           </div>
         </div>

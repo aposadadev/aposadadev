@@ -3,16 +3,24 @@ import Layout from "../layouts/Layout.astro";
 import Home from "../components/Home.astro";
 import About from "../components/About.astro";
 import Experience from "../components/Experience.astro";
+import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
 import Background from "../components/Background.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Andres Posada">
+<Layout
+  title="Andres Posada - Software Engineer"
+  description="Full Stack Software Engineer with over 7 years of experience. Specialized in React, Node.js, and modern web application development."
+  lang="en"
+>
   <Background />
-  <Home />
-  <About />
-  <Experience />
-  <Footer />
+  <Home lang="en" />
+  <About lang="en" />
+  <Experience lang="en" />
+  <Work lang="en" />
+  <Contact lang="en" />
+  <Footer lang="en" />
 </Layout>
 <style>
   /* Estilos globales para la página principal se moverán a los componentes específicos */

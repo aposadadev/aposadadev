@@ -1,0 +1,411 @@
+---
+// Work Component
+import { useTranslations } from "../i18n/utils";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="work" class="py-16 lg:py-24 relative z-10 bg-white/[0.01]">
+  <div class="mx-auto w-full max-w-[1250px] px-4 lg:px-12">
+    <!-- Section Header -->
+    <div class="mb-16 text-center">
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 flex items-center justify-center gap-4 text-white"
+      >
+        <span
+          class="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-2xl lg:text-3xl font-normal"
+          >03.</span
+        >
+        {t("work.title")}
+      </h2>
+      <div
+        class="w-24 lg:w-32 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"
+      >
+      </div>
+    </div>
+
+    <!-- Work Content -->
+    <div class="space-y-16">
+      <!-- Featured Projects Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Project 1 -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/8 hover:border-cyan-400/30 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl lg:text-2xl font-semibold text-white">
+                {t("work.medicalSystem")}
+              </h3>
+              <div class="flex gap-2">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View project"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"
+                    ></path>
+                    <path d="M10 14l10 -10"></path>
+                    <path d="M15 4l5 5"></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View code"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="text-white/70 text-sm lg:text-base leading-relaxed">
+              {t("work.medicalSystem.description")}
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              React
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              NestJS
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Socket.io
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/8 hover:border-cyan-400/30 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl lg:text-2xl font-semibold text-white">
+                {t("work.remittancePlatform")}
+              </h3>
+              <div class="flex gap-2">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View project"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"
+                    ></path>
+                    <path d="M10 14l10 -10"></path>
+                    <path d="M15 4l5 5"></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View code"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="text-white/70 text-sm lg:text-base leading-relaxed">
+              {t("work.remittancePlatform.description")}
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Node.js
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              React
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              AWS
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/8 hover:border-cyan-400/30 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl lg:text-2xl font-semibold text-white">
+                {t("work.messagingApp")}
+              </h3>
+              <div class="flex gap-2">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View project"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"
+                    ></path>
+                    <path d="M10 14l10 -10"></path>
+                    <path d="M15 4l5 5"></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View code"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="text-white/70 text-sm lg:text-base leading-relaxed">
+              {t("work.messagingApp.description")}
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              React Native
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Fastify
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Socket.io
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="bg-white/5 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/8 hover:border-cyan-400/30 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl lg:text-2xl font-semibold text-white">
+                {t("work.creditSystem")}
+              </h3>
+              <div class="flex gap-2">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View project"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"
+                    ></path>
+                    <path d="M10 14l10 -10"></path>
+                    <path d="M15 4l5 5"></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-cyan-400 hover:text-purple-500 transition-colors"
+                  aria-label="View code"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="text-white/70 text-sm lg:text-base leading-relaxed">
+              {t("work.creditSystem.description")}
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              NestJS
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Vue.js
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              PostgreSQL
+            </span>
+            <span
+              class="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium"
+            >
+              Docker
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center mt-16">
+        <p class="text-white/70 text-lg mb-8">
+          {t("work.callToAction")}
+        </p>
+        <a
+          href="#contact"
+          class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 border border-cyan-400/40 text-cyan-400 rounded-lg backdrop-blur-sm font-medium transition-all duration-300 hover:from-cyan-400/30 hover:to-purple-500/30 hover:border-cyan-400/60 hover:-translate-y-0.5"
+        >
+          {t("work.getInTouch")}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

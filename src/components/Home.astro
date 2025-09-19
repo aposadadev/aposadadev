@@ -1,9 +1,27 @@
 ---
 import Header from "./Header.astro";
+import { useTranslations } from "../i18n/utils";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+
+// URLs para los diferentes idiomas
+const isSpanish = lang === "es";
+const resumeUrl = isSpanish ? "/cv/es.pdf" : "/cv/en.pdf";
+const resumeFilename = isSpanish
+  ? "Andres_Posada_CV.pdf"
+  : "Andres_Posada_Resume.pdf";
+const whatsappMessage = encodeURIComponent(t("whatsapp.message"));
+const whatsappUrl = `https://wa.me/573194283920?text=${whatsappMessage}`;
 ---
 
 <div class="relative">
-  <Header />
+  <Header currentLang={lang} />
+
   <!-- Social Media Sidebar -->
   <aside
     class="fixed bottom-8 right-4 md:top-0 md:bottom-0 md:right-0 md:items-end md:justify-center w-auto md:w-20 flex md:flex pb-0 md:pb-36 z-50"
@@ -114,7 +132,7 @@ import Header from "./Header.astro";
       </li>
       <li>
         <a
-          href="https://wa.me/573194283920?text=¡Hola%20Andrés!%20👋%20Vi%20tu%20portafolio%20y%20me%20interesa%20conocer%20más%20sobre%20tus%20servicios%20de%20desarrollo.%20¿Podríamos%20conversar?"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="block transition-all duration-200 ease-in-out hover:text-cyan-400 hover:-translate-y-0.5 focus:outline-none active:scale-95"
@@ -154,7 +172,7 @@ import Header from "./Header.astro";
             <span
               class="text-lg md:text-xl font-inter text-white/70 font-normal"
             >
-              👋 Hello, I'm
+              {t("home.greeting")}
             </span>
           </div>
 
@@ -162,22 +180,21 @@ import Header from "./Header.astro";
           <h1
             class="mt-4 text-4xl md:text-6xl lg:text-7xl text-white font-inter font-extrabold -tracking-wider bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
           >
-            Andrés Posada
+            {t("home.name")}
           </h1>
 
           <!-- Subtitle -->
           <h2
             class="mt-3 mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white font-inter font-normal opacity-90"
           >
-            Software Engineer
+            {t("home.role")}
           </h2>
 
           <!-- Description -->
           <p
             class="text-base sm:text-lg md:text-xl text-white/80 font-inter font-normal leading-relaxed text-balance mb-8"
           >
-            I build web and mobile solutions using modern technologies, focusing
-            on performance, usability, and real-world impact.
+            {t("home.description")}
           </p>
 
           <!-- Action Button -->
@@ -185,11 +202,11 @@ import Header from "./Header.astro";
             class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-10 md:mt-16"
           >
             <a
-              href="/cv/en.pdf"
-              download="Andres_Posada_Resume.pdf"
+              href={resumeUrl}
+              download={resumeFilename}
               class="group relative px-8 py-3 bg-cyan-400/20 border border-cyan-400/40 text-cyan-400 rounded backdrop-blur-sm font-inter font-medium text-sm md:text-base transition-all duration-300 ease-in-out hover:bg-cyan-400/30 hover:border-cyan-400/60 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-400/20 overflow-hidden cursor-pointer inline-block text-center"
             >
-              <span class="relative z-10">Download Resume</span>
+              <span class="relative z-10">{t("home.downloadResume")}</span>
             </a>
           </div>
 
@@ -204,7 +221,7 @@ import Header from "./Header.astro";
                 7+
               </div>
               <div class="text-sm text-white/70 font-normal">
-                Years' Experience
+                {t("home.yearsExperience")}
               </div>
             </div>
             <div
@@ -215,7 +232,9 @@ import Header from "./Header.astro";
               >
                 15+
               </div>
-              <div class="text-sm text-white/70 font-normal">Projects Done</div>
+              <div class="text-sm text-white/70 font-normal">
+                {t("home.projectsDone")}
+              </div>
             </div>
           </div>
         </div>

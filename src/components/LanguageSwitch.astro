@@ -1,0 +1,36 @@
+---
+interface Props {
+  currentLang: "en" | "es";
+}
+
+const { currentLang } = Astro.props;
+---
+
+<div class="fixed bottom-6 left-4 md:top-6 md:right-6 z-[1002]">
+  <div
+    class="flex items-center gap-1 md:gap-2 bg-black/60 backdrop-blur-lg border border-white/20 rounded-full p-1.5 md:p-2 shadow-lg"
+  >
+    <a
+      href="/"
+      class={`px-2 md:px-3 py-1 md:py-1.5 text-xs md:text-sm font-medium transition-all duration-200 rounded-full border ${
+        currentLang === "en"
+          ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+          : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+      }`}
+      aria-label="Switch to English"
+    >
+      EN
+    </a>
+    <a
+      href="/es/"
+      class={`px-2 md:px-3 py-1 md:py-1.5 text-xs md:text-sm font-medium transition-all duration-200 rounded-full border ${
+        currentLang === "es"
+          ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+          : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+      }`}
+      aria-label="Switch to Spanish"
+    >
+      ES
+    </a>
+  </div>
+</div>

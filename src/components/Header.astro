@@ -1,4 +1,10 @@
 ---
+interface Props {
+  currentLang?: "en" | "es";
+}
+
+const { currentLang = "en" } = Astro.props;
+
 const links = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
@@ -28,23 +34,53 @@ const links = [
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:block">
-      <ul class="flex items-center gap-10 lg:gap-12 list-none m-0 p-0">
-        {
-          links.map((link, index) => (
-            <li class="relative">
-              <a
-                href={link.href}
-                class="nav-link flex items-center gap-2 no-underline text-white/90 text-sm lg:text-base font-medium transition-all duration-300 py-2 relative hover:text-cyan-400 hover:-translate-y-0.5 drop-shadow-sm"
-              >
-                <span class="text-cyan-400 text-xs lg:text-sm font-medium drop-shadow-[0_0_10px_rgba(0,212,255,0.4)]">
-                  0{index + 1}.
-                </span>
-                {link.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <div class="flex items-center gap-10 lg:gap-12">
+        <ul class="flex items-center gap-10 lg:gap-12 list-none m-0 p-0">
+          {
+            links.map((link, index) => (
+              <li class="relative">
+                <a
+                  href={link.href}
+                  class="nav-link flex items-center gap-2 no-underline text-white/90 text-sm lg:text-base font-medium transition-all duration-300 py-2 relative hover:text-cyan-400 hover:-translate-y-0.5 drop-shadow-sm"
+                >
+                  <span class="text-cyan-400 text-xs lg:text-sm font-medium drop-shadow-[0_0_10px_rgba(0,212,255,0.4)]">
+                    0{index + 1}.
+                  </span>
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <!-- Language Switch -->
+        <div
+          class="flex items-center gap-2 bg-black/40 backdrop-blur-lg border border-white/20 rounded-full p-1 shadow-lg"
+        >
+          <a
+            href="/"
+            class={`px-3 py-1.5 text-sm font-medium transition-all duration-200 rounded-full border ${
+              currentLang === "en"
+                ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+                : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+            }`}
+            aria-label="Switch to English"
+          >
+            EN
+          </a>
+          <a
+            href="/es/"
+            class={`px-3 py-1.5 text-sm font-medium transition-all duration-200 rounded-full border ${
+              currentLang === "es"
+                ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+                : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+            }`}
+            aria-label="Switch to Spanish"
+          >
+            ES
+          </a>
+        </div>
+      </div>
     </nav>
 
     <!-- Mobile Menu Button -->
@@ -116,6 +152,36 @@ const links = [
               ))
             }
           </ul>
+
+          <!-- Mobile Language Switch -->
+          <div class="mt-8 pt-6 border-t border-white/10">
+            <div
+              class="flex items-center gap-2 bg-black/40 backdrop-blur-lg border border-white/20 rounded-full p-1 shadow-lg"
+            >
+              <a
+                href="/"
+                class={`flex-1 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-full border text-center ${
+                  currentLang === "en"
+                    ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+                    : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+                }`}
+                aria-label="Switch to English"
+              >
+                EN
+              </a>
+              <a
+                href="/es/"
+                class={`flex-1 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-full border text-center ${
+                  currentLang === "es"
+                    ? "bg-cyan-400 text-black border-cyan-400 font-bold shadow-lg"
+                    : "text-white/70 hover:text-cyan-400 hover:bg-white/10 border-transparent"
+                }`}
+                aria-label="Switch to Spanish"
+              >
+                ES
+              </a>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
@@ -231,13 +297,9 @@ const links = [
       ".nav-link, .mobile-nav-link"
     ) as NodeListOf<HTMLAnchorElement>;
 
-    // Scroll effect for header
-    let lastScrollTop = 0;
-
     // Function to check scroll position and update header
     function checkScrollPosition() {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
       if (header) {
         if (scrollTop > 80) {
@@ -246,8 +308,6 @@ const links = [
           header.classList.remove("scrolled");
         }
       }
-
-      lastScrollTop = scrollTop;
     }
 
     // Check initial scroll position on load

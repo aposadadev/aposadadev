@@ -1,42 +1,14 @@
 ---
 // Experience Component
-const experiences = [
-  {
-    date: "2024 - Present",
-    position: "Software Engineer",
-    company: "Momenge",
-    description:
-      "Developing an instant messaging application using Fastify, PostgreSQL, React Native and Socket.io. Implementing real-time event logic, multimedia handling, and account recovery systems.",
-  },
-  {
-    date: "2021 - 2024",
-    position: "Full Stack Developer",
-    company: "WeAre Dev",
-    description:
-      "Designed and developed a remittance platform from scratch using Node.js, React, and PostgreSQL. Led migration of legacy systems for online payments and loan management, modernizing critical financial infrastructure.",
-  },
-  {
-    date: "2020 - 2021",
-    position: "Full Stack Developer",
-    company: "O.S Group",
-    description:
-      "Built a comprehensive platform for credit management and payment processing using NestJS and Vue.js. Focused on creating secure, scalable financial solutions with robust user interfaces.",
-  },
-  {
-    date: "2019 - 2020",
-    position: "Web & Mobile Developer",
-    company: "PLM Group",
-    description:
-      "Developed web and mobile applications for El Dorado Airport's official website. Integrated services for users, flights, and COVID surveys, handling high-traffic airport operations.",
-  },
-  {
-    date: "2018 - 2019",
-    position: "Lead Software Developer",
-    company: "Sumimedical",
-    description:
-      "Led development of comprehensive healthcare software with patient management, inventory control, real-time chat, and multi-database integration (SQL Server, PostgreSQL, MySQL).",
-  },
-];
+import { useTranslations, getExperiences } from "../i18n/utils";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+const experiences = getExperiences(lang);
 ---
 
 <section
@@ -55,7 +27,7 @@ const experiences = [
           class="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal"
           >02.</span
         >
-        Experience
+        {t("experience.title")}
       </h2>
       <div
         class="w-20 sm:w-24 md:w-28 lg:w-32 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto rounded-full"
@@ -126,7 +98,7 @@ const experiences = [
             <span
               class="text-white font-medium text-sm sm:text-base flex items-center gap-2"
             >
-              <span id="toggleText">Show more experiences</span>
+              <span id="toggleText">{t("experience.showMore")}</span>
               <svg
                 id="toggleIcon"
                 class="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5"
@@ -208,7 +180,7 @@ const experiences = [
 
         if (isExpanded) {
           // Show experiences with staggered animation
-          hiddenExperiences.forEach((experience, index) => {
+          hiddenExperiences.forEach((experience, _) => {
             const marker = experience.querySelector(".timeline-marker");
             const experienceEl = experience as HTMLElement;
 
@@ -223,11 +195,11 @@ const experiences = [
                 marker.classList.remove("opacity-0");
                 marker.classList.add("opacity-100");
               }
-            }, index * 200);
+            }, _ * 200);
           });
         } else {
           // Hide experiences immediately
-          hiddenExperiences.forEach((experience, index) => {
+          hiddenExperiences.forEach((experience, _) => {
             const marker = experience.querySelector(".timeline-marker");
             const experienceEl = experience as HTMLElement;
 
