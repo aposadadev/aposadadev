@@ -103,15 +103,18 @@ export const ui = {
     // About section
     "about.hi":
       "Hi, I'm Andrés Posada, a software engineer with over 7 years of experience. I'm passionate about building great web and mobile products, from the initial idea to the final code.",
-    "about.focus":
-      "My focus is on solving complex problems with clean, efficient code. While I specialize in technologies like React, Node.js, and SQL.",
+    "about.focusStart": "My focus is on solving complex problems with",
+    "about.cleanCode": "clean, efficient code",
+    "about.focusMiddle": ". While I specialize in technologies like",
+    "about.technologies": "React, Node.js, and SQL",
+    "about.focusEnd": ".",
     "about.learning":
       "I'm always eager to learn new tools to find the best solution.",
     "about.personal":
       "When I'm not coding, you can find me traveling and spending time with my family.",
     "about.opportunities":
       "I'm always open to new challenges and opportunities. Feel free to connect if you have a cool project or just want to talk about tech.",
-    "about.technologies": "Key Technologies & Skills",
+    "about.technologiesSection": "Key Technologies & Skills",
   },
   es: {
     // Home section
@@ -209,14 +212,17 @@ export const ui = {
     // About section
     "about.hi":
       "Hola, soy Andrés Posada, un ingeniero de software con más de 7 años de experiencia. Me apasiona construir excelentes productos web y móviles, desde la idea inicial hasta el código final.",
-    "about.focus":
-      "Mi enfoque está en resolver problemas complejos con código limpio y eficiente. Mientras me especializo en tecnologías como React, Node.js y SQL.",
+    "about.focusStart": "Mi enfoque está en resolver problemas complejos con",
+    "about.cleanCode": "código limpio y eficiente",
+    "about.focusMiddle": ". Mientras me especializo en tecnologías como",
+    "about.technologies": "React, Node.js y SQL",
+    "about.focusEnd": ".",
     "about.learning":
       "Siempre estoy ansioso por aprender nuevas herramientas para encontrar la mejor solución.",
     "about.personal":
       "Cuando no estoy programando, puedes encontrarme viajando y pasando tiempo con mi familia.",
     "about.opportunities":
       "Siempre estoy abierto a nuevos desafíos y oportunidades. Siéntete libre de conectarte si tienes un proyecto interesante o solo quieres hablar sobre tecnología.",
-    "about.technologies": "Tecnologías y Habilidades Clave",
+    "about.technologiesSection": "Tecnologías y Habilidades Clave",
   },
 } as const;

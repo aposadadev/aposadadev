@@ -1,10 +1,13 @@
 ---
 // About Component
+import { useTranslations } from "../i18n/utils";
+
 interface Props {
   lang?: "en" | "es";
 }
 
-// const { lang } = Astro.props; // Not used in this component
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="about" class="py-16 lg:py-24 relative z-10 bg-white/[0.01]">
@@ -33,39 +36,36 @@ interface Props {
         <!-- Text Content -->
         <div class="text-white/80 font-normal leading-relaxed space-y-6">
           <p class="text-lg lg:text-xl text-white/90 mb-6">
-            Hi, I'm Andrés Posada, a software engineer with over 7 years of
-            experience. I'm passionate about building great web and mobile
-            products, from the initial idea to the final code.
+            {t("about.hi")}
           </p>
 
           <p class="text-base lg:text-lg text-balance">
-            My focus is on solving complex problems with
+            {t("about.focusStart")}
             <span
               class="text-cyan-400 hover:text-purple-500 transition-colors duration-300 relative group"
             >
-              clean, efficient code.
+              {t("about.cleanCode")}
               <span
                 class="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300"
               ></span>
             </span>
-            While I specialize in technologies like
+            {t("about.focusMiddle")}
             <span
               class="text-cyan-400 hover:text-purple-500 transition-colors duration-300 relative group"
             >
-              React, Node.js, and SQL.
+              {t("about.technologies")}
               <span
                 class="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300"
               ></span>
-            </span>I'm always eager to learn new tools to find the best
-            solution.
+            </span>
+            {t("about.focusEnd")}
+            {t("about.learning")}
           </p>
           <p class="text-base lg:text-lg">
-            When I'm not coding, you can find me traveling and spending time
-            with my family.
+            {t("about.personal")}
           </p>
           <p class="text-base lg:text-lg">
-            I'm always open to new challenges and opportunities. Feel free to
-            connect if you have a cool project or just want to talk about tech.
+            {t("about.opportunities")}
           </p>
         </div>
 
@@ -89,7 +89,7 @@ interface Props {
         <h3
           class="text-3xl lg:text-4xl font-semibold mb-8 text-center bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
         >
-          Key Technologies & Skills
+          {t("about.technologiesSection")}
         </h3>
 
         <!-- Desktop Grid (hidden on mobile) -->
