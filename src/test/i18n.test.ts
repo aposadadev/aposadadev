@@ -45,7 +45,7 @@ describe("i18n utilities", () => {
     it("should return experiences array for English", () => {
       const experiences = getExperiences("en");
       expect(Array.isArray(experiences)).toBe(true);
-      expect(experiences).toHaveLength(5);
+      expect(experiences).toHaveLength(6);
       expect(experiences[0]).toHaveProperty("position");
       expect(experiences[0]).toHaveProperty("company");
       expect(experiences[0]).toHaveProperty("description");
@@ -54,7 +54,7 @@ describe("i18n utilities", () => {
     it("should return experiences array for Spanish", () => {
       const experiences = getExperiences("es");
       expect(Array.isArray(experiences)).toBe(true);
-      expect(experiences).toHaveLength(5);
+      expect(experiences).toHaveLength(6);
     });
 
     it("should have different translations for English and Spanish", () => {

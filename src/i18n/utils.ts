@@ -17,6 +17,12 @@ export function getExperiences(lang: keyof typeof ui) {
 
   return [
     {
+      date: t("experience.rentingcarz.date"),
+      position: t("experience.rentingcarz.position"),
+      company: t("experience.rentingcarz.company"),
+      description: t("experience.rentingcarz.description"),
+    },
+    {
       date: t("experience.momenge.date"),
       position: t("experience.momenge.position"),
       company: t("experience.momenge.company"),

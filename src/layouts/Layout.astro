@@ -42,21 +42,25 @@ const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect Fonts & Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description || defaultDescription} />
     <meta
       name="keywords"
-      content="Andrés Posada, software engineer, full stack developer, React, Node.js, TypeScript, web development, mobile development, portfolio, Colombia, Medellín, desarrollador de software, ingeniero de software"
+      content="Andrés Posada, Senior Full Stack Engineer, RentingCarz, Vue 3, Nuxt 3, React, Node.js, TypeScript, Supabase, Cloudflare, web development, portfolio, Colombia, Medellín, desarrollador de software"
     />
     <meta name="author" content="Andrés Posada" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content={lang} />
-    <meta name="geo.region" content="CO-DC" />
+    <meta name="geo.region" content="CO-ANT" />
     <meta name="geo.placename" content="Medellín" />
-    <meta name="geo.position" content="4.7110;-74.0721" />
-    <meta name="ICBM" content="4.7110, -74.0721" />
+    <meta name="geo.position" content="6.2442;-75.5812" />
+    <meta name="ICBM" content="6.2442, -75.5812" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -76,7 +80,7 @@ const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
     <meta property="og:image" content={image || defaultImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Andrés Posada - Software Engineer" />
+    <meta property="og:site_name" content="Andrés Posada - Senior Full Stack Engineer" />
     <meta property="og:locale" content={lang === "es" ? "es_CO" : "en_US"} />
 
     <!-- Twitter -->
@@ -90,43 +94,47 @@ const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
     <meta property="twitter:image" content={image || defaultImage} />
     <meta property="twitter:creator" content="@aposadadev" />
 
-    <!-- Additional SEO -->
+    <!-- Additional SEO & Hreflang -->
     <meta name="theme-color" content="#00d4ff" />
     <meta name="msapplication-TileColor" content="#00d4ff" />
+    <link rel="alternate" hreflang="x-default" href={SITE_BASE_URL} />
     <link rel="alternate" hreflang={lang} href={siteUrl} />
     <link
       rel="alternate"
       hreflang={lang === "es" ? "en" : "es"}
-      href={lang === "es" ? siteUrl.replace("/es/", "/") : siteUrl + "es/"}
+      href={lang === "es" ? siteUrl.replace("/es/", "/") : `${SITE_BASE_URL}/es/`}
     />
 
     <!-- Structured Data (JSON-LD) -->
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Andrés Posada",
-        jobTitle: lang === "es" ? "Ingeniero de Software" : "Software Engineer",
+        jobTitle: lang === "es" ? "Ingeniero de Software Senior" : "Senior Full Stack Engineer",
+        worksFor: {
+          "@type": "Organization",
+          name: "RentingCarz Holdings",
+        },
         url: siteUrl,
         sameAs: [
           "https://github.com/aposadadev",
           "https://linkedin.com/in/aposadadev",
           "https://twitter.com/aposadadev",
-          "https://instagram.com/aposadadev",
         ],
         knowsAbout: [
+          "Vue 3",
+          "Nuxt 3",
           "React",
           "Node.js",
           "TypeScript",
-          "React Native",
-          "Fastify",
-          "NestJS",
+          "Supabase",
+          "Cloudflare",
           "PostgreSQL",
-          "MongoDB",
           "Full Stack Development",
-          "Web Development",
-          "Mobile Development",
+          "Web Applications",
         ],
         address: {
           "@type": "PostalAddress",
@@ -139,18 +147,14 @@ const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
 
     <!-- Google Analytics -->
     <script
+      is:inline
       async
       src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
     ></script>
-    <script>
-      declare global {
-        interface Window {
-          dataLayer: any[];
-        }
-      }
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
-        window.dataLayer.push(args);
+      function gtag() {
+        window.dataLayer.push(arguments);
       }
       gtag("js", new Date());
       gtag("config", "GA_MEASUREMENT_ID");

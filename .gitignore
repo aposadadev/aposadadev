@@ -1,10 +1,22 @@
-node_modules
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# astro generated types & cache
+.astro/
+.cache/
+
+# logs
 *.log*
-.nuxt
-.nitro
-.cache
-.output
+
+# environment variables
 .env
-dist
+.env.*
+!.env.example
+
+# OS / Editor files
 .DS_Store
-.vscode
+.vscode/
+.idea/

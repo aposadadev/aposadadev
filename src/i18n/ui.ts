@@ -11,9 +11,9 @@ export const ui = {
     // Home section
     "home.greeting": "👋 Hello, I'm",
     "home.name": "Andrés Posada",
-    "home.role": "Software Engineer",
+    "home.role": "Senior Full Stack Engineer",
     "home.description":
-      "I build web and mobile solutions using modern technologies, focusing on performance, usability, and real-world impact.",
+      "Senior Full Stack Engineer at RentingCarz Holdings. I specialize in building high-performance web applications, modern financial systems, and AI-driven platforms with clean architecture and focus on UX.",
     "home.downloadResume": "Download Resume",
     "home.yearsExperience": "Years' Experience",
     "home.projectsDone": "Projects Done",
@@ -21,20 +21,26 @@ export const ui = {
     // Experience section
     "experience.title": "Experience",
     "experience.intro":
-      "Over the past 7 years in software development, I've built scalable solutions for industries ranging from healthcare to finance, helping teams deliver reliable systems that solve real-world problems.",
+      "Over 7+ years in software engineering, I've designed and delivered scalable web applications, fintech infrastructure, and real-time systems across international tech companies and fast-paced environments.",
     "experience.showMore": "Show more experiences",
     "experience.showLess": "Show less",
 
     // WhatsApp message
     "whatsapp.message":
-      "Hi Andrés! 👋 I saw your portfolio and I'm interested in learning more about your development services. Could we talk?",
+      "Hi Andrés! 👋 I saw your portfolio and I'm interested in connecting. Could we talk?",
 
     // Experience data
-    "experience.momenge.date": "2024 - Present",
+    "experience.rentingcarz.date": "2024 - Present",
+    "experience.rentingcarz.position": "Senior Full Stack Engineer",
+    "experience.rentingcarz.company": "RentingCarz Holdings",
+    "experience.rentingcarz.description":
+      "Leading frontend & backend development for car rental & mobility booking platforms using Vue 3, Nuxt, Node.js, and cloud integrations. Optimizing performance, checkout conversion, and system reliability.",
+
+    "experience.momenge.date": "2024",
     "experience.momenge.position": "Software Engineer",
     "experience.momenge.company": "Momenge",
     "experience.momenge.description":
-      "Developing an instant messaging application using Fastify, PostgreSQL, React Native and Socket.io. Implementing real-time event logic, multimedia handling, and account recovery systems.",
+      "Developed an instant messaging application using Fastify, PostgreSQL, React Native and Socket.io. Implemented real-time event logic, multimedia handling, and account recovery systems.",
 
     "experience.wearedev.date": "2021 - 2024",
     "experience.wearedev.position": "Full Stack Developer",
@@ -61,28 +67,28 @@ export const ui = {
       "Led development of comprehensive healthcare software with patient management, inventory control, real-time chat, and multi-database integration (SQL Server, PostgreSQL, MySQL).",
 
     // Work/Projects section
-    "work.title": "Work",
-    "work.medicalSystem": "Medical Management System",
-    "work.medicalSystem.description":
-      "Comprehensive medical management system with patient modules, inventory control, and real-time communication. Built with NestJS, React, and PostgreSQL.",
-    "work.remittancePlatform": "Remittance Platform",
+    "work.title": "Featured Projects",
+    "work.equilibrio": "Equilibrio - Personal Finance Platform",
+    "work.equilibrio.description":
+      "Personal finance platform featuring visual runway calculators, virtual savings pockets & PWA support. Built with Nuxt 3, Nuxt UI & Supabase for zero-cost deployment on Cloudflare Pages.",
+    "work.aiTutor": "AI English Tutor Platform",
+    "work.aiTutor.description":
+      "Interactive AI-powered language tutor with real-time audio analysis (WebM Opus), baseline proficiency evaluation, and Anki spaced repetition algorithm.",
+    "work.matchPredictions": "Realtime Sports Match Predictions",
+    "work.matchPredictions.description":
+      "Live sports prediction app with real-time leaderboard, user ranking analytics, Firebase RTDB integration, and secure API key management.",
+    "work.remittancePlatform": "Remittance & Payment Platform",
     "work.remittancePlatform.description":
-      "Complete remittance platform with online payment integration and loan management. Legacy system migration to modern technologies.",
-    "work.messagingApp": "Messaging App",
-    "work.messagingApp.description":
-      "Instant messaging application with real-time features, multimedia handling, and account recovery system.",
-    "work.creditSystem": "Credit Management System",
-    "work.creditSystem.description":
-      "Comprehensive credit management and payment processing system with robust user interfaces and advanced security.",
+      "End-to-end remittance platform with online payment integration and loan management built with Node.js, React & PostgreSQL.",
     "work.callToAction":
-      "Interested in working together? Let's discuss your next project!",
+      "Interested in working together or discussing a project? Let's talk!",
     "work.getInTouch": "Get In Touch",
 
     // Contact section
     "contact.title": "Contact",
     "contact.talk": "Let's Talk!",
     "contact.description":
-      "I'm always open to discussing new projects, creative opportunities, or just chatting about technology. Don't hesitate to reach out.",
+      "I'm always open to discussing new projects, tech architecture, or creative opportunities. Don't hesitate to reach out.",
     "contact.email": "Email",
     "contact.whatsapp": "WhatsApp",
     "contact.location": "Location",
@@ -100,7 +106,7 @@ export const ui = {
     // Navigation
     "nav.about": "About",
     "nav.experience": "Experience",
-    "nav.work": "Work",
+    "nav.work": "Projects",
     "nav.contact": "Contact",
 
     // Footer
@@ -108,36 +114,36 @@ export const ui = {
 
     // Meta
     "meta.description":
-      "Andrés Posada - Full Stack Software Engineer with over 7 years of experience. Specialized in React, Node.js, and modern web application development.",
+      "Andrés Posada - Senior Full Stack Engineer at RentingCarz Holdings. Specialized in Vue.js, Nuxt 3, React, Node.js, and modern cloud applications.",
 
     // About section
     "about.hi":
-      "Hi, I'm Andrés Posada, a software engineer with over 7 years of experience. I'm passionate about building great web and mobile products, from the initial idea to the final code.",
-    "about.focusStart": "My focus is on solving complex problems with",
-    "about.cleanCode": "clean, efficient code",
-    "about.focusMiddle": ". While I specialize in technologies like",
-    "about.technologies": "React, Node.js, and SQL",
+      "Hi, I'm Andrés Posada, a Senior Full Stack Engineer at RentingCarz Holdings with over 7 years of experience building modern web & digital products.",
+    "about.focusStart": "My focus is on delivering high-impact solutions with",
+    "about.cleanCode": "clean code and robust architecture",
+    "about.focusMiddle": ". I specialize in technologies like",
+    "about.technologies": "Vue 3, Nuxt 3, React, Node.js, and PostgreSQL",
     "about.focusEnd": ".",
     "about.learning":
-      "I'm always eager to learn new tools to find the best solution.",
+      "I constantly explore modern paradigms like AI integration, serverless edge deployments, and responsive UI frameworks.",
     "about.personal":
-      "When I'm not coding, you can find me traveling and spending time with my family.",
+      "When I'm not coding, I enjoy traveling, learning about new technologies, and spending quality time with my family.",
     "about.opportunities":
-      "I'm always open to new challenges and opportunities. Feel free to connect if you have a cool project or just want to talk about tech.",
-    "about.technologiesSection": "Key Technologies & Skills",
+      "Feel free to connect if you want to chat about software engineering, web architectures, or interesting projects.",
+    "about.technologiesSection": "Key Stack & Competencies",
     "about.sectionTitle": "About Me",
     "about.frontend": "Frontend",
     "about.backend": "Backend",
-    "about.database": "Database",
-    "about.tools": "Tools & Other",
+    "about.database": "Database & Cloud",
+    "about.tools": "Tools & AI Integrations",
   },
   es: {
     // Home section
     "home.greeting": "👋 Hola, soy",
     "home.name": "Andrés Posada",
-    "home.role": "Ingeniero de Software",
+    "home.role": "Senior Full Stack Engineer",
     "home.description":
-      "Construyo soluciones web y móviles usando tecnologías modernas, enfocándome en rendimiento, usabilidad e impacto real.",
+      "Ingeniero de Software Senior en RentingCarz Holdings. Me especializo en construir aplicaciones web de alto rendimiento, plataformas financieras modernas y soluciones impulsadas por IA con arquitectura limpia y enfoque en UX.",
     "home.downloadResume": "Descargar CV",
     "home.yearsExperience": "Años de Experiencia",
     "home.projectsDone": "Proyectos Realizados",
@@ -145,68 +151,74 @@ export const ui = {
     // Experience section
     "experience.title": "Experiencia",
     "experience.intro":
-      "Durante los últimos 7 años en desarrollo de software, he creado soluciones escalables para industrias que van desde la salud hasta las finanzas, ayudando a equipos a entregar sistemas confiables que resuelven problemas del mundo real.",
+      "Durante más de 7 años en ingeniería de software, he diseñado y entregado aplicaciones web escalables, infraestructura fintech y sistemas en tiempo real para empresas tecnológicas globales.",
     "experience.showMore": "Ver más experiencias",
     "experience.showLess": "Ver menos",
 
     // WhatsApp message
     "whatsapp.message":
-      "¡Hola Andrés! 👋 Vi tu portafolio y me interesa conocer más sobre tus servicios de desarrollo. ¿Podríamos conversar?",
+      "¡Hola Andrés! 👋 Vi tu portafolio y me interesa conectar contigo. ¿Podríamos conversar?",
 
     // Experience data
-    "experience.momenge.date": "2024 - Presente",
+    "experience.rentingcarz.date": "2024 - Presente",
+    "experience.rentingcarz.position": "Ingeniero de Software Senior",
+    "experience.rentingcarz.company": "RentingCarz Holdings",
+    "experience.rentingcarz.description":
+      "Liderando el desarrollo frontend y backend de plataformas globales de reserva de autos y movilidad usando Vue 3, Nuxt, Node.js e integraciones cloud. Optimizando rendimiento, conversión en checkout y confiabilidad del sistema.",
+
+    "experience.momenge.date": "2024",
     "experience.momenge.position": "Ingeniero de Software",
     "experience.momenge.company": "Momenge",
     "experience.momenge.description":
-      "Desarrollando una aplicación de mensajería instantánea usando Fastify, PostgreSQL, React Native y Socket.io. Implementando lógica de eventos en tiempo real, manejo de multimedia y sistemas de recuperación de cuentas.",
+      "Desarrollo de aplicación de mensajería instantánea usando Fastify, PostgreSQL, React Native y Socket.io. Implementación de eventos en tiempo real y recuperación de cuentas.",
 
     "experience.wearedev.date": "2021 - 2024",
     "experience.wearedev.position": "Desarrollador Full Stack",
     "experience.wearedev.company": "WeAre Dev",
     "experience.wearedev.description":
-      "Diseñé y desarrollé una plataforma de remesas desde cero usando Node.js, React y PostgreSQL. Lideré la migración de sistemas legacy para pagos en línea y gestión de préstamos, modernizando infraestructura financiera crítica.",
+      "Diseño y desarrollo de plataforma de remesas desde cero con Node.js, React y PostgreSQL. Lideré la migración de sistemas legacy para pagos en línea y gestión de préstamos.",
 
     "experience.osgroup.date": "2020 - 2021",
     "experience.osgroup.position": "Desarrollador Full Stack",
     "experience.osgroup.company": "O.S Group",
     "experience.osgroup.description":
-      "Construí una plataforma integral para gestión de créditos y procesamiento de pagos usando NestJS y Vue.js. Me enfoqué en crear soluciones financieras seguras y escalables con interfaces de usuario robustas.",
+      "Construcción de plataforma para gestión de créditos y procesamiento de pagos usando NestJS y Vue.js. Enfoque en seguridad y escalabilidad.",
 
     "experience.plmgroup.date": "2019 - 2020",
     "experience.plmgroup.position": "Desarrollador Web y Móvil",
     "experience.plmgroup.company": "PLM Group",
     "experience.plmgroup.description":
-      "Desarrollé aplicaciones web y móviles para el sitio web oficial del Aeropuerto El Dorado. Integré servicios para usuarios, vuelos y encuestas COVID, manejando operaciones aeroportuarias de alto tráfico.",
+      "Desarrollo de aplicaciones web y móviles para el sitio oficial del Aeropuerto El Dorado. Integración de servicios para usuarios y vuelos en alto tráfico.",
 
     "experience.sumimedical.date": "2018 - 2019",
     "experience.sumimedical.position": "Desarrollador de Software Líder",
     "experience.sumimedical.company": "Sumimedical",
     "experience.sumimedical.description":
-      "Lideré el desarrollo de software integral de salud con gestión de pacientes, control de inventario, chat en tiempo real e integración de múltiples bases de datos (SQL Server, PostgreSQL, MySQL).",
+      "Liderazgo en software de salud con gestión de pacientes, inventario, chat en tiempo real e integración de múltiples bases de datos.",
 
     // Work/Projects section
-    "work.title": "Proyectos",
-    "work.medicalSystem": "Sistema de Gestión Médica",
-    "work.medicalSystem.description":
-      "Sistema integral de gestión médica con módulos de pacientes, control de inventario y comunicación en tiempo real. Desarrollado con NestJS, React y PostgreSQL.",
-    "work.remittancePlatform": "Plataforma de Remesas",
+    "work.title": "Proyectos Destacados",
+    "work.equilibrio": "Equilibrio - Plataforma de Finanzas Personales",
+    "work.equilibrio.description":
+      "Plataforma de finanzas personales con calculadora de runway visual, bolsillos virtuales de ahorro y soporte PWA. Desarrollado con Nuxt 3, Nuxt UI y Supabase.",
+    "work.aiTutor": "Tutor de Inglés con IA",
+    "work.aiTutor.description":
+      "Aplicación interactiva para aprendizaje de idiomas impulsada por IA con análisis de voz en tiempo real (WebM Opus), evaluación inicial y repetición espaciada Anki.",
+    "work.matchPredictions": "Predicciones Deportivas en Tiempo Real",
+    "work.matchPredictions.description":
+      "Plataforma de predicciones deportivas en tiempo real con tabla de posiciones dinámica, Firebase RTDB y gestión segura de API Keys.",
+    "work.remittancePlatform": "Plataforma de Remesas y Pagos",
     "work.remittancePlatform.description":
-      "Plataforma completa de remesas con integración de pagos en línea y gestión de préstamos. Migración de sistemas legacy a tecnologías modernas.",
-    "work.messagingApp": "Aplicación de Mensajería",
-    "work.messagingApp.description":
-      "Aplicación de mensajería instantánea con características en tiempo real, manejo de multimedia y sistema de recuperación de cuentas.",
-    "work.creditSystem": "Sistema de Gestión de Créditos",
-    "work.creditSystem.description":
-      "Sistema integral de gestión de créditos y procesamiento de pagos con interfaces de usuario robustas y seguridad avanzada.",
+      "Plataforma integral de remesas con pagos en línea y gestión de préstamos. Desarrollada con Node.js, React y PostgreSQL.",
     "work.callToAction":
-      "¿Interesado en trabajar juntos? ¡Hablemos de tu próximo proyecto!",
+      "¿Interesado en conversar o trabajar juntos? ¡Hablemos de tu próximo proyecto!",
     "work.getInTouch": "Contáctame",
 
     // Contact section
     "contact.title": "Contacto",
     "contact.talk": "¡Hablemos!",
     "contact.description":
-      "Estoy siempre abierto a discutir nuevos proyectos, oportunidades creativas o simplemente charlar sobre tecnología. No dudes en ponerte en contacto.",
+      "Estoy siempre abierto a discutir sobre ingeniería de software, arquitectura web o nuevas oportunidades tecnológicas.",
     "contact.email": "Correo electrónico",
     "contact.whatsapp": "WhatsApp",
     "contact.location": "Ubicación",
@@ -232,27 +244,27 @@ export const ui = {
 
     // Meta
     "meta.description":
-      "Andrés Posada - Desarrollador de Software Full Stack con más de 7 años de experiencia. Especializado en React, Node.js, y desarrollo de aplicaciones web modernas.",
+      "Andrés Posada - Senior Full Stack Engineer en RentingCarz Holdings. Especializado en Vue.js, Nuxt 3, React, Node.js y desarrollo de aplicaciones web modernas.",
 
     // About section
     "about.hi":
-      "Hola, soy Andrés Posada, un ingeniero de software con más de 7 años de experiencia. Me apasiona construir excelentes productos web y móviles, desde la idea inicial hasta el código final.",
-    "about.focusStart": "Mi enfoque está en resolver problemas complejos con",
-    "about.cleanCode": "código limpio y eficiente",
-    "about.focusMiddle": ". Mientras me especializo en tecnologías como",
-    "about.technologies": "React, Node.js y SQL",
+      "Hola, soy Andrés Posada, Senior Full Stack Engineer en RentingCarz Holdings con más de 7 años de experiencia construyendo productos web y digitales modernos.",
+    "about.focusStart": "Mi enfoque está en crear soluciones de alto impacto con",
+    "about.cleanCode": "código limpio y arquitectura robusta",
+    "about.focusMiddle": ". Me especializo en tecnologías como",
+    "about.technologies": "Vue 3, Nuxt 3, React, Node.js y PostgreSQL",
     "about.focusEnd": ".",
     "about.learning":
-      "Siempre estoy ansioso por aprender nuevas herramientas para encontrar la mejor solución.",
+      "Constantemente exploro paradigmas modernos como integración de IA, despliegues serverless edge y frameworks UI responsivos.",
     "about.personal":
-      "Cuando no estoy programando, puedes encontrarme viajando y pasando tiempo con mi familia.",
+      "Cuando no estoy programando, disfruto viajar, aprender sobre tecnología y pasar tiempo con mi familia.",
     "about.opportunities":
-      "Siempre estoy abierto a nuevos desafíos y oportunidades. Siéntete libre de conectarte si tienes un proyecto interesante o solo quieres hablar sobre tecnología.",
-    "about.technologiesSection": "Tecnologías y Habilidades Clave",
+      "Siéntete libre de conectar si deseas hablar sobre ingeniería de software, arquitectura web o proyectos interesantes.",
+    "about.technologiesSection": "Stack y Competencias Clave",
     "about.sectionTitle": "Sobre Mí",
     "about.frontend": "Frontend",
     "about.backend": "Backend",
-    "about.database": "Base de Datos",
-    "about.tools": "Herramientas y Otros",
+    "about.database": "Base de Datos y Cloud",
+    "about.tools": "Herramientas e Integraciones IA",
   },
 } as const;
