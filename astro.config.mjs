@@ -4,7 +4,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://aposadadev.com",
+  site: "https://aposadadev.github.io",
+  base: "/aposadadev",
   integrations: [tailwind(), sitemap()],
   i18n: {
     defaultLocale: "en",

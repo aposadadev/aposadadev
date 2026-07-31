@@ -17,7 +17,9 @@ if (lang && !["en", "es"].includes(lang)) {
 }
 
 // Constants
-const SITE_BASE_URL = "https://aposadadev.com";
+const SITE_BASE_URL = Astro.site
+  ? Astro.site.href.replace(/\/$/, "")
+  : "https://aposadadev.github.io/aposadadev";
 const DEFAULT_IMAGE = "/hero.webp";
 
 // Initialize translations

@@ -3,8 +3,8 @@
   <p><strong>Senior Full Stack Engineer @ RentingCarz Holdings</strong></p>
   <p>Architecting high-performance web apps, financial tools & AI-driven experiences.</p>
 
-  <a href="https://aposadadev.com" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-aposadadev.com-00d4ff?style=for-the-badge&logo=astro&logoColor=white" alt="Portfolio" />
+  <a href="https://aposadadev.github.io/aposadadev" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-aposadadev.github.io-00d4ff?style=for-the-badge&logo=astro&logoColor=white" alt="Portfolio" />
   </a>
   <a href="https://linkedin.com/in/aposadadev" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Andr%C3%A9s_Posada-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
@@ -67,12 +67,15 @@
 ### 📊 GitHub Activity
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=aposadadev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="aposadadev GitHub Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=aposadadev&layout=compact&theme=tokyonight&hide_border=true&hide=html" alt="Top Languages" />
+  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=aposadadev&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="aposadadev GitHub Stats" />
+  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=aposadadev&layout=compact&theme=tokyonight&hide_border=true&hide=html" alt="Top Languages" />
+</p>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=aposadadev&theme=tokyo-night&hide_border=true" alt="aposadadev Activity Graph" width="100%" />
 </p>
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by Andrés Posada • <a href="https://aposadadev.com">aposadadev.com</a></sub>
+  <sub>Built with ❤️ by Andrés Posada • <a href="https://aposadadev.github.io/aposadadev">aposadadev.github.io</a></sub>
 </div>
