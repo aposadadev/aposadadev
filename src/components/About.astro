@@ -1,6 +1,7 @@
 ---
 // About Component
 import { useTranslations } from "../i18n/utils";
+import { getAssetPath } from "../utils/paths";
 
 interface Props {
   lang?: "en" | "es";
@@ -75,7 +76,7 @@ const t = useTranslations(lang);
             class="relative w-72 h-80 lg:w-80 lg:h-96 border-2 border-cyan-400/40 hover:border-purple-500/60 rounded-xl overflow-hidden"
           >
             <img
-              src="/about-image.webp"
+              src={getAssetPath("/about-image.webp")}
               alt="Andrés Posada working"
               class="absolute w-full h-full object-cover rounded-xl top-8"
               loading="lazy"

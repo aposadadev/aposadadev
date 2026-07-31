@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://aposadadev.github.io",
+  site: "https://aposadadev.github.io/aposadadev",
   base: "/aposadadev",
   integrations: [tailwind(), sitemap()],
   i18n: {

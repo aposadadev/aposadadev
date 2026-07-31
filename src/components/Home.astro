@@ -1,6 +1,7 @@
 ---
 import Header from "./Header.astro";
 import { useTranslations } from "../i18n/utils";
+import { getAssetPath } from "../utils/paths";
 
 interface Props {
   lang?: "en" | "es";
@@ -11,7 +12,9 @@ const t = useTranslations(lang);
 
 // URLs para los diferentes idiomas
 const isSpanish = lang === "es";
-const resumeUrl = isSpanish ? "/cv/es.pdf" : "/cv/en.pdf";
+const resumeUrl = isSpanish
+  ? getAssetPath("/cv/es.pdf")
+  : getAssetPath("/cv/en.pdf");
 const resumeFilename = isSpanish
   ? "Andres_Posada_CV.pdf"
   : "Andres_Posada_Resume.pdf";
@@ -249,7 +252,7 @@ const whatsappUrl = `https://wa.me/573194283920?text=${whatsappMessage}`;
             >
             </div>
             <img
-              src="/hero.webp"
+              src={getAssetPath("/hero.webp")}
               alt="Andrés Posada - Software Engineer"
               class="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-20 transition-all duration-300 hover:scale-105"
               loading="eager"

@@ -8,6 +8,7 @@ interface Props {
 }
 
 import { useTranslations } from "../i18n/utils";
+import { getAssetPath } from "../utils/paths";
 
 const { title, description, image, url, lang = "en" } = Astro.props;
 
@@ -20,7 +21,7 @@ if (lang && !["en", "es"].includes(lang)) {
 const SITE_BASE_URL = Astro.site
   ? Astro.site.href.replace(/\/$/, "")
   : "https://aposadadev.github.io/aposadadev";
-const DEFAULT_IMAGE = "/hero.webp";
+const DEFAULT_IMAGE = `${SITE_BASE_URL}/hero.webp`;
 
 // Initialize translations
 const t = useTranslations(lang);
@@ -68,8 +69,8 @@ const canonicalUrl = siteUrl; // Canonical is always the same as siteUrl
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={getAssetPath("/favicon.svg")} />
+    <link rel="apple-touch-icon" href={getAssetPath("/favicon.svg")} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
